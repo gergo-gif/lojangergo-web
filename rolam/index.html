@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rólam – Loján Gergő</title>
+<meta name="description" content="Coach, tréner és családállító. Abban segítek, hogy senki ne maradjon egyedül.">
+<link rel="canonical" href="https://lojangergo.com/rolam/">
+<meta property="og:title" content="Rólam – Loján Gergő">
+<meta property="og:description" content="Coach, tréner és családállító. Abban segítek, hogy senki ne maradjon egyedül.">
+<meta property="og:image" content="https://lojangergo.com/img/hero.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&amp;family=Work+Sans:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0;background:#F5EDE0}
+a{color:#2A211C}a:hover{color:#B24A26}
+@keyframes rise{from{opacity:0;transform:translateY(48px)}to{opacity:1;transform:none}}
+@keyframes kenburns{from{transform:scale(1.15)}to{transform:scale(1)}}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-12px) rotate(1deg)}}
+@keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes widen{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes twinkle{0%,100%{opacity:.3;transform:scale(.8) rotate(0deg)}50%{opacity:1;transform:scale(1.1) rotate(20deg)}}
+.rise{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.d1{animation-delay:.1s}.d2{animation-delay:.25s}.d3{animation-delay:.4s}.d4{animation-delay:.55s}
+.kb{animation:kenburns 3s cubic-bezier(.2,.7,.2,1) both}
+.float{animation:floaty 4.5s ease-in-out infinite}
+.twinkle{animation:twinkle 3.5s ease-in-out infinite}
+@keyframes glowpulse{0%,100%{opacity:.5;transform:scale(.9)}50%{opacity:1;transform:scale(1.1)}}
+.glowpulse{animation:glowpulse 6s ease-in-out infinite}
+.seg4{transform-origin:left;animation:widen 1.2s cubic-bezier(.2,.7,.2,1) both}
+.btn{transition:transform .2s ease}
+.btn:hover{transform:translateY(-3px)}
+.card{transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s ease}
+.card:hover{transform:translateY(-8px);box-shadow:0 24px 48px rgba(42,33,28,.2)}
+.line{transform-origin:top}
+@supports (animation-timeline: view()){.reveal{animation:rise linear both;animation-timeline:view();animation-range:entry 0% cover 28%}.line{animation:grow linear both;animation-timeline:view();animation-range:entry 10% cover 60%}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+
+.navtoggle{display:none}
+@media (max-width: 860px){
+  .navtoggle{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border:2px solid #2A211C;background:transparent;color:#2A211C;cursor:pointer}
+  header nav{display:none !important;width:100%;flex-direction:column;align-items:stretch !important;gap:4px !important;padding-top:8px}
+  header nav a{padding:12px 4px !important;font-size:18px !important}
+  header.open nav{display:flex !important}
+}
+@media (max-width: 600px){
+  h1{font-size:clamp(40px,11vw,64px) !important}
+  h2{font-size:clamp(34px,9.5vw,56px) !important}
+  h1,h2,h3{overflow-wrap:anywhere}
+}
+</style>
+</head>
+<body>
+<div style="font-family: 'Work Sans', sans-serif; color: #2A211C; background: #F5EDE0; font-size: 17px; line-height: 1.6; overflow-x: hidden">
+
+<header style="border-bottom: 1px solid #DCCFBB">
+<div style="max-width: 1240px; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px">
+<a href="/" style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 30px; letter-spacing: 0.04em; text-decoration: none; color: #2A211C">LOJÁN GERGŐ</a>
+<button type="button" class="navtoggle" aria-label="Menü" aria-expanded="false"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+<nav aria-label="Fő menü" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; font-size: 15px; font-weight: 500">
+<a href="/ismerkedos-estek/" style="text-decoration: none">Ismerkedős estek</a>
+<a href="/treningek/" style="text-decoration: none">Tréningek</a>
+<a href="/csaladallitas/" style="text-decoration: none">Családállítás</a>
+<a href="/egyeni-konzultacio/" style="text-decoration: none">Egyéni konzultáció</a>
+<a href="/rolam/" style="text-decoration: none; font-weight: 700; border-bottom: 3px solid #2A211C">Rólam</a>
+<a href="/#teszt" class="btn" style="text-decoration: none; background: #D9A32E; color: #2A211C; padding: 12px 18px; font-weight: 600">Teszt</a>
+<a href="/#alkalmak" class="btn" style="text-decoration: none; background: #2A211C; color: #F5EDE0; padding: 12px 18px; font-weight: 600">Időpontok</a>
+</nav>
+</div>
+</header>
+
+<div aria-hidden="true" style="display: flex; height: 10px">
+<div class="seg4" style="flex: 1; background: #D9A32E"></div>
+<div class="seg4" style="flex: 1; background: #B24A26; animation-delay: .15s"></div>
+<div class="seg4" style="flex: 1; background: #4F5A2A; animation-delay: .3s"></div>
+<div class="seg4" style="flex: 1; background: #1F5A63; animation-delay: .45s"></div>
+</div>
+
+<section style="max-width: 1240px; margin: 0 auto; padding: 80px 24px 96px; display: flex; flex-wrap: wrap; align-items: center; gap: 56px">
+<div style="flex: 999 1 520px; min-width: 0">
+<p class="rise" style="margin: 0 0 20px; font-size: 14px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #B24A26">Rólam</p>
+<h1 class="rise d1" style="margin: 0 0 24px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(64px, 8.5vw, 128px); line-height: 0.88; text-transform: uppercase">Szia, Loján Gergő vagyok.</h1>
+<p class="rise d2" style="margin: 0; font-size: 24px; font-weight: 500; max-width: 24em">Abban segítek, hogy senki ne maradjon egyedül.</p>
+</div>
+<div class="rise d2" style="flex: 1 1 380px; min-width: 0; position: relative">
+<div style="overflow: hidden">
+<img class="kb" src="/img/rolam.jpg" alt="Loján Gergő mosolygó portréja" style="display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover">
+</div>
+<div class="float" style="position: absolute; left: -16px; bottom: 32px; max-width: 78%; background: #2A211C; color: #F5EDE0; padding: 16px 22px; display: flex; align-items: center; gap: 12px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; font-size: 24px; line-height: 1.05; text-transform: uppercase">
+<svg class="twinkle" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D9A32E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 auto"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>
+<span>Szeretném, hogy te is megtaláld a helyed.</span></div>
+</div>
+</section>
+
+<section style="background: #2A211C; color: #F5EDE0">
+<div style="max-width: 860px; margin: 0 auto; padding: 104px 24px">
+<p class="reveal" style="margin: 0 0 20px; font-size: 14px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #D9A32E">Ahol minden kezdődött</p>
+<p class="reveal" style="margin: 0 0 28px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; font-size: clamp(32px, 3.6vw, 48px); line-height: 1.05; text-transform: uppercase">Az általános iskolában a tanáraim egyszer azt mondták a szüleimnek, hogy „csillagszemélyiség” vagyok.</p>
+<p class="reveal" style="margin: 0 0 20px; font-size: 19px">Akkor nem értettem, mit jelent, ma már tudom: szinte mindenkihez tudtam kapcsolódni az osztályban. Mindig érdekelt, hogy a másik hogy van, és azt szerettem volna, hogy minden közösségemben mindenki jól érezze magát, és senki ne legyen kirekesztve. Mert én is akkor érzem jól magam.</p>
+<p class="reveal" style="margin: 0; font-size: 19px">Volt idő, amikor szinte hobbiként ültem oda azokhoz, akikkel régen beszéltem, hogy megkérdezzem: mi van veled? Aztán egyre többen jöttek oda hozzám maguktól: elmesélték a nehézségeiket, és együtt kerestünk megoldást.</p>
+</div>
+</section>
+
+<section style="max-width: 1240px; margin: 0 auto; padding: 104px 24px; display: flex; flex-wrap: wrap; gap: 56px; align-items: flex-start">
+<div style="flex: 999 1 520px; min-width: 0">
+<h2 class="reveal" style="margin: 0 0 40px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(44px, 5vw, 72px); line-height: 0.95; text-transform: uppercase">Az utam</h2>
+<div style="position: relative; padding-left: 48px">
+<div class="line" style="position: absolute; left: 13px; top: 8px; bottom: 8px; width: 3px; background: #2A211C"></div>
+
+<div class="reveal" style="position: relative; margin-bottom: 40px">
+<div style="position: absolute; left: -48px; top: 0; width: 30px; height: 30px; border-radius: 50%; background: #F5EDE0; border: 3px solid #2A211C"></div>
+<p style="margin: 0 0 6px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 30px; line-height: 1">2022 · ELTE</p>
+<p style="margin: 0; font-size: 18px">Gazdasági egyetem. Nem bántam meg, de éreztem, hogy nem ez az én utam: akkor vagyok a leghasznosabb, ha az emberek közötti kapcsolódásban segíthetek.</p>
+</div>
+
+<div class="reveal" style="position: relative; margin-bottom: 40px">
+<div style="position: absolute; left: -48px; top: 0; width: 30px; height: 30px; border-radius: 50%; background: #1F5A63"></div>
+<p style="margin: 0 0 6px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 30px; line-height: 1">2024 · Coachképzés</p>
+<p style="margin: 0; font-size: 18px">Pro Bona. A coachingba érkező ügyfeleim ébresztettek rá, hogy rengeteg ember szenved attól, hogy nincs közössége, vagy nem talál társat.</p>
+</div>
+
+<div class="reveal" style="position: relative; margin-bottom: 40px">
+<div style="position: absolute; left: -48px; top: 0; width: 30px; height: 30px; border-radius: 50%; background: #B24A26"></div>
+<p style="margin: 0 0 6px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 30px; line-height: 1">2025 · Trénerképzés</p>
+<p style="margin: 0; font-size: 18px">Antener Trénerképző. Megtanultam, hogyan lehet közösségi élményeket tudatosan, felépítetten megteremteni. Így születtek meg az ismerkedős estjeim, ahol azóta több mint 3000 ember kapcsolódhatott egymáshoz.</p>
+</div>
+
+<div class="reveal" style="position: relative">
+<div style="position: absolute; left: -48px; top: 0; width: 30px; height: 30px; border-radius: 50%; background: #4F5A2A"></div>
+<p style="margin: 0 0 6px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 30px; line-height: 1">2026 · Családállító képzés</p>
+<p style="margin: 0; font-size: 18px">Varga Kriszta, HoldMe. A spiritualitás és a mélyebb elakadások mindig is érdekeltek. Mert van, amit nem lehet kibeszélni, csak megmutatni.</p>
+</div>
+
+</div>
+</div>
+<div class="reveal" style="flex: 1 1 320px; min-width: 0; position: relative">
+<div style="overflow: hidden; transform: rotate(2deg)">
+<img src="/img/rolam2.jpg" alt="Gergő nevetve, egy jegyzetfüzettel a kezében" style="display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover">
+</div>
+</div>
+</section>
+
+<section style="background: #EADFCB">
+<div style="max-width: 1240px; margin: 0 auto; padding: 96px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px">
+<div class="card reveal" style="background: #B24A26; color: #FFFFFF; padding: 32px">
+<p style="margin: 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 80px; line-height: 1">1000+</p>
+<p style="margin: 8px 0 0; font-size: 18px; font-weight: 500">coachingóra</p>
+</div>
+<div class="card reveal" style="background: #1F5A63; color: #FFFFFF; padding: 32px">
+<p style="margin: 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 80px; line-height: 1">100+</p>
+<p style="margin: 8px 0 0; font-size: 18px; font-weight: 500">kliens</p>
+</div>
+<div class="card reveal" style="background: #D9A32E; color: #2A211C; padding: 32px">
+<p style="margin: 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 80px; line-height: 1">3000+</p>
+<p style="margin: 8px 0 0; font-size: 18px; font-weight: 500">résztvevő az ismerkedős esteken</p>
+</div>
+</div>
+</section>
+
+<section style="max-width: 980px; margin: 0 auto; padding: 112px 24px">
+<p class="reveal" style="margin: 0 0 24px; font-size: 14px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #B24A26">Amiben hiszek</p>
+<p class="reveal" style="margin: 0 0 32px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(40px, 5vw, 72px); line-height: 0.98; text-transform: uppercase">Ami fáj, vagy félelmet kelt bennünk, az hordozza a legnagyobb lehetőséget.</p>
+<p class="reveal" style="margin: 0; font-size: 19px; max-width: 40em">Hiszem, hogy a nehézségeink formálnak minket. Az életem legnehezebb időszakait, a szüleim válását, egy szeretett családtag elvesztését, egy fájdalmas szakítást, csak úgy tudtam elviselni, hogy értelmet kerestem bennük. Ha megértjük, mit akarnak tanítani, nemcsak a mi életünk, hanem másoké is jobb lehet.</p>
+</section>
+
+<section style="background: #2A211C; color: #F5EDE0">
+<div style="max-width: 1240px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
+<div class="reveal" style="flex: 999 1 480px; min-width: 0">
+<p style="margin: 0 0 20px; font-size: 14px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #D9A32E">Ma</p>
+<p style="margin: 0 0 20px; font-size: 20px">Csak nemrég állt össze bennem, mennyire szerencsés vagyok, hogy a kapcsolatokkal foglalkozhatok. Ma már nem csak beszélgetni tudok róluk. Meg tudom teremteni a helyet és az időt, ahol új emberekkel találkozhatsz.</p>
+<p style="margin: 0; font-size: 20px">És ha valahol elakadsz, tréningeken, családállításon vagy négyszemközt megkeressük együtt, mi tart vissza.</p>
+</div>
+<div class="reveal" style="flex: 1 1 320px; min-width: 0">
+<p style="margin: 0 0 20px; font-size: 14px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #D9A32E">Képzéseim</p>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; font-size: 17px">
+<li style="border-bottom: 1px solid #6B5B4E; padding-bottom: 12px"><strong>Családállító képzés</strong><br>Varga Kriszta, HoldMe · 2026</li>
+<li style="border-bottom: 1px solid #6B5B4E; padding-bottom: 12px"><strong>Trénerképzés</strong><br>Antener Trénerképző · 2025</li>
+<li style="border-bottom: 1px solid #6B5B4E; padding-bottom: 12px"><strong>Coachképzés</strong><br>Pro Bona · 2024</li>
+<li><strong>Gazdasági diploma</strong><br>ELTE · 2022</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section style="background: #B24A26; color: #FFFFFF; position: relative; overflow: hidden">
+<div aria-hidden="true" style="display: flex; height: 10px">
+<div style="flex: 1; background: #D9A32E"></div>
+<div style="flex: 1; background: #2A211C"></div>
+<div style="flex: 1; background: #4F5A2A"></div>
+<div style="flex: 1; background: #1F5A63"></div>
+</div>
+<div aria-hidden="true" class="glowpulse" style="position: absolute; width: 900px; height: 900px; left: 50%; top: 50%; margin-left: -450px; margin-top: -450px; border-radius: 50%; background: radial-gradient(circle, rgba(217,163,46,.55), rgba(217,163,46,0) 62%)"></div>
+<div style="position: relative; max-width: 1240px; margin: 0 auto; padding: 128px 24px; text-align: center">
+<p class="reveal" style="margin: 0 0 24px; font-size: 22px; font-weight: 500">Szeretném, ha mindenki azt érezné: van hova és van kihez tartoznia.</p>
+<h2 class="reveal" style="margin: 0 0 48px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(64px, 10vw, 168px); line-height: 0.86; text-transform: uppercase">Senkit sem<br>hagyunk egyedül.</h2>
+<div class="reveal" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 14px">
+<a href="/egyeni-konzultacio/" class="btn" style="background: #F5EDE0; color: #2A211C; text-decoration: none; font-weight: 700; font-size: 19px; padding: 20px 34px">Foglald le az első beszélgetést</a>
+<a href="/#teszt" class="btn" style="background: #2A211C; color: #F5EDE0; text-decoration: none; font-weight: 700; font-size: 19px; padding: 20px 34px">2 perces teszt</a>
+</div>
+</div>
+</section>
+
+<footer style="background: #F5EDE0; border-top: 1px solid #DCCFBB">
+<div style="max-width: 1240px; margin: 0 auto; padding: 48px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px 32px; font-size: 15px">
+<span style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 24px; letter-spacing: 0.04em">LOJÁN GERGŐ</span>
+<span><a href="/aszf/">ÁSZF</a> · <a href="/adatkezeles/">Adatkezelés</a> · <a href="/impresszum/">Impresszum</a></span>
+</div>
+</footer>
+
+</div>
+<script>
+document.querySelectorAll('header').forEach(function(h){
+  var b=h.querySelector('.navtoggle'); if(!b) return;
+  b.addEventListener('click',function(){var o=h.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});
+});
+</script>
+</body>
+</html>

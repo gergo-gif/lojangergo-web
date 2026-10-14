@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Az oldal nem található – Loján Gergő</title>
+<meta name="description" content="Coach, tréner és családállító. Abban segítek, hogy senki ne maradjon egyedül.">
+<meta property="og:title" content="Rólam – Loján Gergő">
+<meta property="og:description" content="Coach, tréner és családállító. Abban segítek, hogy senki ne maradjon egyedül.">
+<meta property="og:image" content="https://lojangergo.com/img/hero.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&amp;family=Work+Sans:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0;background:#F5EDE0}
+a{color:#2A211C}a:hover{color:#B24A26}
+@keyframes rise{from{opacity:0;transform:translateY(48px)}to{opacity:1;transform:none}}
+@keyframes kenburns{from{transform:scale(1.15)}to{transform:scale(1)}}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-12px) rotate(1deg)}}
+@keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes widen{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes twinkle{0%,100%{opacity:.3;transform:scale(.8) rotate(0deg)}50%{opacity:1;transform:scale(1.1) rotate(20deg)}}
+.rise{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.d1{animation-delay:.1s}.d2{animation-delay:.25s}.d3{animation-delay:.4s}.d4{animation-delay:.55s}
+.kb{animation:kenburns 3s cubic-bezier(.2,.7,.2,1) both}
+.float{animation:floaty 4.5s ease-in-out infinite}
+.twinkle{animation:twinkle 3.5s ease-in-out infinite}
+@keyframes glowpulse{0%,100%{opacity:.5;transform:scale(.9)}50%{opacity:1;transform:scale(1.1)}}
+.glowpulse{animation:glowpulse 6s ease-in-out infinite}
+.seg4{transform-origin:left;animation:widen 1.2s cubic-bezier(.2,.7,.2,1) both}
+.btn{transition:transform .2s ease}
+.btn:hover{transform:translateY(-3px)}
+.card{transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s ease}
+.card:hover{transform:translateY(-8px);box-shadow:0 24px 48px rgba(42,33,28,.2)}
+.line{transform-origin:top}
+@supports (animation-timeline: view()){.reveal{animation:rise linear both;animation-timeline:view();animation-range:entry 0% cover 28%}.line{animation:grow linear both;animation-timeline:view();animation-range:entry 10% cover 60%}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+
+.navtoggle{display:none}
+@media (max-width: 860px){
+  .navtoggle{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border:2px solid #2A211C;background:transparent;color:#2A211C;cursor:pointer}
+  header nav{display:none !important;width:100%;flex-direction:column;align-items:stretch !important;gap:4px !important;padding-top:8px}
+  header nav a{padding:12px 4px !important;font-size:18px !important}
+  header.open nav{display:flex !important}
+}
+@media (max-width: 600px){
+  h1{font-size:clamp(40px,11vw,64px) !important}
+  h2{font-size:clamp(34px,9.5vw,56px) !important}
+  h1,h2,h3{overflow-wrap:anywhere}
+}
+</style>
+</head>
+<body>
+<div style="font-family: 'Work Sans', sans-serif; color: #2A211C; background: #F5EDE0; font-size: 17px; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column">
+<header style="border-bottom: 1px solid #DCCFBB">
+<div style="max-width: 1240px; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px">
+<a href="/" style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 30px; letter-spacing: 0.04em; text-decoration: none; color: #2A211C">LOJÁN GERGŐ</a>
+<button type="button" class="navtoggle" aria-label="Menü" aria-expanded="false"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+<nav aria-label="Fő menü" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; font-size: 15px; font-weight: 500">
+<a href="/ismerkedos-estek/" style="text-decoration: none">Ismerkedős estek</a>
+<a href="/treningek/" style="text-decoration: none">Tréningek</a>
+<a href="/csaladallitas/" style="text-decoration: none">Családállítás</a>
+<a href="/egyeni-konzultacio/" style="text-decoration: none">Egyéni konzultáció</a>
+<a href="/rolam/" style="text-decoration: none; ">Rólam</a>
+<a href="/#teszt" class="btn" style="text-decoration: none; background: #D9A32E; color: #2A211C; padding: 12px 18px; font-weight: 600">Teszt</a>
+<a href="/#alkalmak" class="btn" style="text-decoration: none; background: #2A211C; color: #F5EDE0; padding: 12px 18px; font-weight: 600">Időpontok</a>
+</nav>
+</div>
+</header>
+<main style="flex: 1; max-width: 900px; margin: 0 auto; padding: 120px 24px; width: 100%; box-sizing: border-box">
+<p style="margin: 0 0 16px; font-size: 14px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #B24A26">404</p>
+<h1 style="margin: 0 0 24px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(48px, 7vw, 96px); line-height: 0.92; text-transform: uppercase">Ez az oldal nem található.</h1>
+<p style="margin: 0 0 32px; font-size: 20px">Lehet, hogy elköltözött. Kezdd a főoldalon.</p>
+<a href="/" class="btn" style="display: inline-block; background: #2A211C; color: #F5EDE0; text-decoration: none; font-weight: 700; padding: 18px 30px">Vissza a főoldalra</a>
+</main>
+<footer style="background: #F5EDE0; border-top: 1px solid #DCCFBB">
+<div style="max-width: 1240px; margin: 0 auto; padding: 48px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px 32px; font-size: 15px">
+<span style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 24px; letter-spacing: 0.04em">LOJÁN GERGŐ</span>
+<span><a href="/aszf/">ÁSZF</a> · <a href="/adatkezeles/">Adatkezelés</a> · <a href="/impresszum/">Impresszum</a></span>
+</div>
+</footer>
+</div>
+
+</div>
+<script>
+document.querySelectorAll('header').forEach(function(h){
+  var b=h.querySelector('.navtoggle'); if(!b) return;
+  b.addEventListener('click',function(){var o=h.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});
+});
+</script>
+</body>
+</html>

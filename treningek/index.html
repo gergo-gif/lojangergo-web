@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tréningek – Vonzerő Műhely és Belső Iránytű Műhely – Loján Gergő</title>
+<meta name="description" content="Két műhely: ismerkedés és vonzerő, valamint önismeret jungi alapokon nyugvó archetípusokkal. Online és személyesen.">
+<link rel="canonical" href="https://lojangergo.com/treningek/">
+<meta property="og:title" content="Tréningek – Vonzerő Műhely és Belső Iránytű Műhely – Loján Gergő">
+<meta property="og:description" content="Két műhely: ismerkedés és vonzerő, valamint önismeret jungi alapokon nyugvó archetípusokkal. Online és személyesen.">
+<meta property="og:image" content="https://lojangergo.com/img/hero.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&amp;family=Work+Sans:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0;background:#F5EDE0}
+a{color:#2A211C}a:hover{color:#B24A26}
+@keyframes rise{from{opacity:0;transform:translateY(48px)}to{opacity:1;transform:none}}
+@keyframes kenburns{from{transform:scale(1.15)}to{transform:scale(1)}}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-12px) rotate(1deg)}}
+@keyframes flicker{0%,100%{opacity:.45;transform:scale(1)}50%{opacity:.8;transform:scale(1.08)}}
+.rise{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.d1{animation-delay:.1s}.d2{animation-delay:.25s}.d3{animation-delay:.4s}.d4{animation-delay:.55s}
+.kb{animation:kenburns 3s cubic-bezier(.2,.7,.2,1) both}
+.float{animation:floaty 4.5s ease-in-out infinite}
+.flicker{animation:flicker 4s ease-in-out infinite}
+.btn{transition:transform .2s ease}
+.btn:hover{transform:translateY(-3px)}
+.card{transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s ease}
+.card:hover{transform:translateY(-10px);box-shadow:0 24px 48px rgba(42,33,28,.25)}
+.pill{transition:background .2s ease,color .2s ease,transform .2s ease;cursor:pointer}
+.pill:hover{transform:translateY(-2px)}
+input:focus{outline:3px solid #D9A32E;outline-offset:2px}
+details summary{cursor:pointer;list-style:none}
+details summary::-webkit-details-marker{display:none}
+details .plus{display:inline-block;transition:transform .3s ease}
+details[open] .plus{transform:rotate(45deg)}
+@supports (animation-timeline: view()){.reveal{animation:rise linear both;animation-timeline:view();animation-range:entry 0% cover 28%}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+
+.navtoggle{display:none}
+@media (max-width: 860px){
+  .navtoggle{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border:2px solid #2A211C;background:transparent;color:#2A211C;cursor:pointer}
+  header nav{display:none !important;width:100%;flex-direction:column;align-items:stretch !important;gap:4px !important;padding-top:8px}
+  header nav a{padding:12px 4px !important;font-size:18px !important}
+  header.open nav{display:flex !important}
+}
+@media (max-width: 600px){
+  h1{font-size:clamp(40px,11vw,64px) !important}
+  h2{font-size:clamp(34px,9.5vw,56px) !important}
+  h1,h2,h3{overflow-wrap:anywhere}
+}
+</style>
+</head>
+<body>
+<div style="font-family: 'Work Sans', sans-serif; color: #2A211C; background: #F5EDE0; font-size: 17px; line-height: 1.55; overflow-x: hidden">
+
+<header style="border-bottom: 1px solid #DCCFBB">
+<div style="max-width: 1240px; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px">
+<a href="/" style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 30px; letter-spacing: 0.04em; text-decoration: none; color: #2A211C">LOJÁN GERGŐ</a>
+<button type="button" class="navtoggle" aria-label="Menü" aria-expanded="false"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+<nav aria-label="Fő menü" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; font-size: 15px; font-weight: 500">
+<a href="/ismerkedos-estek/" style="text-decoration: none">Ismerkedős estek</a>
+<a href="/treningek/" style="text-decoration: none; font-weight: 700; border-bottom: 3px solid #B24A26">Tréningek</a>
+<a href="/csaladallitas/" style="text-decoration: none">Családállítás</a>
+<a href="/egyeni-konzultacio/" style="text-decoration: none">Egyéni konzultáció</a>
+<a href="/rolam/" style="text-decoration: none">Rólam</a>
+<a href="/#teszt" class="btn" style="text-decoration: none; background: #D9A32E; color: #2A211C; padding: 12px 18px; font-weight: 600">Teszt</a>
+<a href="/#alkalmak" class="btn" style="text-decoration: none; background: #2A211C; color: #F5EDE0; padding: 12px 18px; font-weight: 600">Időpontok</a>
+</nav>
+</div>
+</header>
+
+<section style="background: #B24A26; color: #FFFFFF; position: relative; overflow: hidden">
+<div class="flicker" style="position: absolute; width: 720px; height: 720px; right: -160px; top: -200px; border-radius: 50%; background: radial-gradient(circle, rgba(217,163,46,.7), rgba(217,163,46,0) 65%)"></div>
+<div style="position: relative; max-width: 1240px; margin: 0 auto; padding: 88px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 56px">
+<div style="flex: 999 1 520px; min-width: 0">
+<p class="rise" style="margin: 0 0 20px; display: inline-flex; align-items: center; gap: 10px; background: #2A211C; color: #F5EDE0; font-size: 14px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 8px 14px">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c1 3 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-6 1-9z"></path></svg>
+Tűz · Csoportos tréningek</p>
+<h1 class="rise d1" style="margin: 0 0 24px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(60px, 8vw, 120px); line-height: 0.9; text-transform: uppercase">Két műhely, egy tűz.</h1>
+<p class="rise d2" style="margin: 0 0 36px; font-size: 21px; max-width: 30em">Az egyik kifelé figyel: hogyan kapcsolódj, hogyan légy vonzó. A másik befelé: mi hajt valójában, és hol a helyed.</p>
+<div class="rise d3" style="display: flex; flex-wrap: wrap; gap: 12px">
+<a href="#elore" class="btn" style="background: #F5EDE0; color: #2A211C; text-decoration: none; font-weight: 600; font-size: 18px; padding: 18px 30px">Előregisztrálok</a>
+<a href="#muhelyek" class="btn" style="border: 2px solid #FFFFFF; color: #FFFFFF; text-decoration: none; font-weight: 600; padding: 16px 26px">A két műhely</a>
+</div>
+</div>
+<div class="rise d2" style="flex: 1 1 360px; min-width: 0; position: relative">
+<div style="overflow: hidden">
+<img class="kb" src="/img/trening.jpg" alt="Gergő mikrofonnal magyaráz egy csoportnak" style="display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 30%">
+</div>
+<div class="float" style="position: absolute; left: -16px; bottom: 32px; background: #D9A32E; color: #2A211C; padding: 14px 20px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; font-size: 24px; text-transform: uppercase">Indulás: november</div>
+</div>
+</div>
+</section>
+
+<section id="muhelyek" style="max-width: 1240px; margin: 0 auto; padding: 104px 24px 72px; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px">
+
+<article class="card reveal" style="border: 3px solid #2A211C; background: #FFFFFF; display: flex; flex-direction: column">
+<div style="background: #B24A26; color: #FFFFFF; padding: 32px">
+<p style="margin: 0 0 10px; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase">Kifelé · ismerkedés</p>
+<h2 style="margin: 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(44px, 4.6vw, 64px); line-height: 0.92; text-transform: uppercase">Vonzerő Műhely</h2>
+</div>
+<div style="padding: 32px; display: flex; flex-direction: column; gap: 20px; flex-grow: 1">
+<p style="margin: 0; font-size: 18px">Hogyan pattan a szikra két ember között, és miért nem pattan, amikor annyira szeretnéd? Ebben a műhelyben nem trükköket tanulsz, hanem azt, hogyan légy önmagad úgy, hogy az vonzó legyen.</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px">
+<li>Bátor kezdeményezés</li>
+<li>Megmutatni magad</li>
+<li>A jelek olvasása</li>
+<li>Az elutasítás kezelése, úgy, hogy ne vegye el a kedved</li>
+</ul>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; border-top: 2px solid #2A211C; padding-top: 20px; font-size: 15px">
+<div><strong style="display: block; font-family: 'Big Shoulders Display', sans-serif; font-size: 34px; line-height: 1">4</strong>alkalom, heti 1, 3 óra</div>
+<div><strong style="display: block; font-family: 'Big Shoulders Display', sans-serif; font-size: 34px; line-height: 1">6–12</strong>fő csoportonként</div>
+<div><strong style="display: block; font-family: 'Big Shoulders Display', sans-serif; font-size: 34px; line-height: 1; color: #B24A26">39 900 Ft</strong>online</div>
+<div><strong style="display: block; font-family: 'Big Shoulders Display', sans-serif; font-size: 34px; line-height: 1; color: #B24A26">49 900 Ft</strong>személyesen</div>
+</div>
+<p style="margin: auto 0 0; font-style: italic; color: #5A4C42">Mert a vonzerő nem adottság, hanem tanulható.</p>
+</div>
+</article>
+
+<article class="card reveal" style="border: 3px solid #2A211C; background: #FFFFFF; display: flex; flex-direction: column">
+<div style="background: #2A211C; color: #F5EDE0; padding: 32px">
+<p style="margin: 0 0 10px; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #D9A32E">Befelé · önismeret</p>
+<h2 style="margin: 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(44px, 4.6vw, 64px); line-height: 0.92; text-transform: uppercase">Belső Iránytű Műhely</h2>
+</div>
+<div style="padding: 32px; display: flex; flex-direction: column; gap: 20px; flex-grow: 1">
+<p style="margin: 0; font-size: 18px">Mi hajt valójában? Megkeressük a belső tüzedet: azokat a drivereket, amelyek motiválnak. Jungi alapokon nyugvó archetípusokkal feltérképezzük, milyen szerepekben vagy igazán önmagad.</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px">
+<li>A saját archetípusaid és szerepeid</li>
+<li>A belső driverek, amelyekből erőt meríthetsz</li>
+<li>Hol találod meg őket: munkában, kapcsolatban, életmódban</li>
+<li>Egy irány, amerre tovább indulhatsz</li>
+</ul>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; border-top: 2px solid #2A211C; padding-top: 20px; font-size: 15px">
+<div><strong style="display: block; font-family: 'Big Shoulders Display', sans-serif; font-size: 34px; line-height: 1">6</strong>alkalom, heti 1, 3 óra</div>
+<div><strong style="display: block; font-family: 'Big Shoulders Display', sans-serif; font-size: 34px; line-height: 1">6–10</strong>fő csoportonként</div>
+<div><strong style="display: block; font-family: 'Big Shoulders Display', sans-serif; font-size: 34px; line-height: 1; color: #B24A26">59 900 Ft</strong>online</div>
+<div><strong style="display: block; font-family: 'Big Shoulders Display', sans-serif; font-size: 34px; line-height: 1; color: #B24A26">69 900 Ft</strong>személyesen</div>
+</div>
+<p style="margin: auto 0 0; font-style: italic; color: #5A4C42">Nemcsak azt tudod meg, ki vagy, hanem azt is, merre tovább.</p>
+</div>
+</article>
+
+</section>
+
+<section style="max-width: 1240px; margin: 0 auto; padding: 24px 24px 96px">
+<h2 class="reveal" style="margin: 0 0 32px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(44px, 5vw, 72px); line-height: 0.95; text-transform: uppercase">Hogyan indul egy csoport?</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
+<div class="card reveal" style="background: #EADFCB; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<span style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 56px; line-height: 1; color: #B24A26">1</span>
+<p style="margin: 0; font-size: 20px; font-weight: 600">Ingyenes előregisztráció</p>
+<p style="margin: 0">Megadod, melyik műhely érdekel, online vagy személyesen.</p>
+</div>
+<div class="card reveal" style="background: #EADFCB; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<span style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 56px; line-height: 1; color: #B24A26">2</span>
+<p style="margin: 0; font-size: 20px; font-weight: 600">Összegyűlik a csoport</p>
+<p style="margin: 0">Ha megvan a legalább 6 fő, e-mailben kapod a fizetési linket és az időpontokat.</p>
+</div>
+<div class="card reveal" style="background: #EADFCB; padding: 28px; display: flex; flex-direction: column; gap: 14px">
+<span style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 56px; line-height: 1; color: #B24A26">3</span>
+<p style="margin: 0; font-size: 20px; font-weight: 600">Fizetés, és indulunk</p>
+<p style="margin: 0">A helyed a fizetéssel lesz biztos. A számlát automatikusan küldöm.</p>
+</div>
+</div>
+<p class="reveal" style="margin: 24px 0 0; color: #5A4C42">Senki nem fizet olyan csoportért, ami végül nem indul.</p>
+</section>
+
+<section id="elore" style="background: #2A211C; color: #F5EDE0; position: relative; overflow: hidden">
+<div class="flicker" style="position: absolute; width: 640px; height: 640px; left: -220px; bottom: -260px; border-radius: 50%; background: radial-gradient(circle, rgba(178,74,38,.6), rgba(178,74,38,0) 70%)"></div>
+<div style="position: relative; max-width: 900px; margin: 0 auto; padding: 104px 24px">
+<p class="reveal" style="margin: 0 0 16px; font-size: 14px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #D9A32E">Ingyenes, nem kötelez semmire</p>
+<h2 class="reveal" style="margin: 0 0 40px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(52px, 6vw, 96px); line-height: 0.9; text-transform: uppercase">Előregisztráció</h2>
+
+
+<form id="elore-form" class="reveal" style="display: flex; flex-direction: column; gap: 28px" novalidate>
+<fieldset style="border: 0; margin: 0; padding: 0">
+<legend style="margin-bottom: 12px; font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase">Melyik műhely?</legend>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<button type="button" class="pill" data-group="workshop" aria-pressed="true" style="font-family: 'Work Sans', sans-serif; font-size: 18px; font-weight: 600; padding: 16px 24px; border: 2px solid #F5EDE0; background: #D9A32E; color: #2A211C">Vonzerő Műhely</button>
+<button type="button" class="pill" data-group="workshop" aria-pressed="false" style="font-family: 'Work Sans', sans-serif; font-size: 18px; font-weight: 600; padding: 16px 24px; border: 2px solid #F5EDE0; background: transparent; color: #F5EDE0">Belső Iránytű Műhely</button>
+</div>
+</fieldset>
+<fieldset style="border: 0; margin: 0; padding: 0">
+<legend style="margin-bottom: 12px; font-size: 14px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase">Hogyan vennél részt?</legend>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<button type="button" class="pill" data-group="format" aria-pressed="true" style="font-family: 'Work Sans', sans-serif; font-size: 18px; font-weight: 600; padding: 16px 24px; border: 2px solid #F5EDE0; background: #D9A32E; color: #2A211C">Online</button>
+<button type="button" class="pill" data-group="format" aria-pressed="false" style="font-family: 'Work Sans', sans-serif; font-size: 18px; font-weight: 600; padding: 16px 24px; border: 2px solid #F5EDE0; background: transparent; color: #F5EDE0">Személyesen</button>
+<button type="button" class="pill" data-group="format" aria-pressed="false" style="font-family: 'Work Sans', sans-serif; font-size: 18px; font-weight: 600; padding: 16px 24px; border: 2px solid #F5EDE0; background: transparent; color: #F5EDE0">Mindegy</button>
+</div>
+</fieldset>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase">Keresztnév
+<input type="text" name="nev" required autocomplete="given-name" placeholder="pl. Anna" style="font-family: 'Work Sans', sans-serif; font-size: 18px; padding: 16px; border: 0; background: #F5EDE0; color: #2A211C; text-transform: none; letter-spacing: 0">
+</label>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase">E-mail-cím
+<input type="email" name="email" required autocomplete="email" placeholder="anna@pelda.hu" style="font-family: 'Work Sans', sans-serif; font-size: 18px; padding: 16px; border: 0; background: #F5EDE0; color: #2A211C; text-transform: none; letter-spacing: 0">
+</label>
+</div>
+<label style="display: flex; align-items: flex-start; gap: 12px; font-size: 15px">
+<input type="checkbox" name="hozzajarulas" required style="width: 22px; height: 22px; margin: 0; flex: 0 0 auto">
+<span>Hozzájárulok, hogy a műhely indulásáról e-mailt kapjak. Az <a href="/adatkezeles/" style="color: #F5EDE0">adatkezelési tájékoztatót</a> elolvastam.</span>
+</label>
+<button type="submit" class="btn" style="align-self: flex-start; font-family: 'Work Sans', sans-serif; font-size: 20px; font-weight: 700; padding: 20px 40px; border: 0; background: #D9A32E; color: #2A211C; cursor: pointer">Előregisztrálok →</button>
+</form>
+
+
+
+<div class="rise" id="elore-ok" hidden style="background: #F5EDE0; color: #2A211C; padding: 40px">
+<p style="margin: 0 0 12px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 48px; line-height: 1; text-transform: uppercase">Köszönöm!</p>
+<p style="margin: 0; font-size: 19px">Rögzítettem az előregisztrációdat. Amint összegyűlik a csoport, e-mailben küldöm az időpontokat és a fizetési linket.</p>
+</div>
+
+</div>
+</section>
+
+<section style="background: #EADFCB">
+<div style="max-width: 900px; margin: 0 auto; padding: 96px 24px">
+<h2 class="reveal" style="margin: 0 0 32px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(44px, 5vw, 72px); line-height: 0.95; text-transform: uppercase">Gyakori kérdések</h2>
+<div style="border-top: 2px solid #2A211C">
+<details class="reveal" style="border-bottom: 1px solid #C9B9A0; padding: 22px 0">
+<summary style="display: flex; justify-content: space-between; gap: 16px; font-size: 20px; font-weight: 600">Melyik műhelyt válasszam?<span class="plus" aria-hidden="true">+</span></summary>
+<p style="margin: 14px 0 0">Ha az ismerkedésben, a párkeresésben akadtál el, a Vonzerő Műhely. Ha azt keresed, mi hajt és merre tovább, a Belső Iránytű. Ha bizonytalan vagy, töltsd ki a tesztet, vagy foglalj egy első beszélgetést.</p>
+</details>
+<details class="reveal" style="border-bottom: 1px solid #C9B9A0; padding: 22px 0">
+<summary style="display: flex; justify-content: space-between; gap: 16px; font-size: 20px; font-weight: 600">Hol lesznek a személyes alkalmak?<span class="plus" aria-hidden="true">+</span></summary>
+<p style="margin: 14px 0 0">Budapesten, a Bartók Béla úton, hétköznap esténként.</p>
+</details>
+<details class="reveal" style="border-bottom: 1px solid #C9B9A0; padding: 22px 0">
+<summary style="display: flex; justify-content: space-between; gap: 16px; font-size: 20px; font-weight: 600">Mi van, ha nem indul el a csoport?<span class="plus" aria-hidden="true">+</span></summary>
+<p style="margin: 14px 0 0">Akkor nem fizetsz semmit. Fizetni csak akkor kell, ha a csoport már biztosan elindul.</p>
+</details>
+<details class="reveal" style="border-bottom: 1px solid #C9B9A0; padding: 22px 0">
+<summary style="display: flex; justify-content: space-between; gap: 16px; font-size: 20px; font-weight: 600">Mi van, ha le kell mondanom?<span class="plus" aria-hidden="true">+</span></summary>
+<p style="margin: 14px 0 0">A csoport indulása előtt legalább 7 nappal díjmentesen lemondhatod, és a teljes díjat visszautalom. Az indulás előtti 7 napon belül már nincs visszatérítés.</p>
+</details>
+</div>
+</div>
+</section>
+
+<section style="background: #B24A26; color: #FFFFFF">
+<div class="reveal" style="max-width: 1240px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 32px">
+<h2 style="margin: 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(44px, 5vw, 80px); line-height: 0.92; text-transform: uppercase; max-width: 10em">Lobbantsuk lángra a parazsat.</h2>
+<div style="display: flex; flex-direction: column; gap: 14px; align-items: flex-start">
+<a href="#elore" class="btn" style="background: #F5EDE0; color: #2A211C; text-decoration: none; font-weight: 700; font-size: 19px; padding: 20px 34px">Előregisztrálok</a>
+<a href="/#teszt" style="color: #FFFFFF; font-weight: 600">Nem vagy biztos benne? Töltsd ki a 2 perces tesztet →</a>
+</div>
+</div>
+</section>
+
+<footer style="background: #F5EDE0; border-top: 1px solid #DCCFBB">
+<div style="max-width: 1240px; margin: 0 auto; padding: 48px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px 32px; font-size: 15px">
+<span style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 24px; letter-spacing: 0.04em">LOJÁN GERGŐ</span>
+<span><a href="/aszf/">ÁSZF</a> · <a href="/adatkezeles/">Adatkezelés</a> · <a href="/impresszum/">Impresszum</a></span>
+</div>
+</footer>
+
+</div>
+<script>
+document.querySelectorAll('header').forEach(function(h){
+  var b=h.querySelector('.navtoggle'); if(!b) return;
+  b.addEventListener('click',function(){var o=h.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});
+});
+</script>
+<script>
+(function(){
+  document.querySelectorAll('[data-group]').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('[data-group="'+b.dataset.group+'"]').forEach(function(x){
+        x.style.background='transparent';x.style.color='#F5EDE0';x.setAttribute('aria-pressed','false');});
+      b.style.background='#D9A32E';b.style.color='#2A211C';b.setAttribute('aria-pressed','true');
+    });
+  });
+  var f=document.getElementById('elore-form');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!f.reportValidity()) return;
+    // TODO: Brevo-bekötés (4. lépés). Addig csak a köszönőüzenet jelenik meg.
+    f.hidden=true; document.getElementById('elore-ok').hidden=false;
+  });
+})();
+</script>
+</body>
+</html>

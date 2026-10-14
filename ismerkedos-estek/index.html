@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ismerkedős estek – Loján Gergő</title>
+<meta name="description" content="Új emberek, kötetlenül, tét nélkül. Ismerkedős estek Budapesten a U2Vibe szervezésében.">
+<link rel="canonical" href="https://lojangergo.com/ismerkedos-estek/">
+<meta property="og:title" content="Ismerkedős estek – Loján Gergő">
+<meta property="og:description" content="Új emberek, kötetlenül, tét nélkül. Ismerkedős estek Budapesten a U2Vibe szervezésében.">
+<meta property="og:image" content="https://lojangergo.com/img/hero.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&amp;family=Work+Sans:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0;background:#F5EDE0}
+a{color:#2A211C}a:hover{color:#8A6510}
+@keyframes rise{from{opacity:0;transform:translateY(48px)}to{opacity:1;transform:none}}
+@keyframes kenburns{from{transform:scale(1.15)}to{transform:scale(1)}}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-12px) rotate(1deg)}}
+@keyframes drift{0%{transform:translateY(0) translateX(0);opacity:0}15%{opacity:.8}100%{transform:translateY(-760px) translateX(40px);opacity:0}}
+.rise{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.d1{animation-delay:.1s}.d2{animation-delay:.25s}.d3{animation-delay:.4s}.d4{animation-delay:.55s}
+.kb{animation:kenburns 3s cubic-bezier(.2,.7,.2,1) both}
+.float{animation:floaty 4.5s ease-in-out infinite}
+.bub{position:absolute;bottom:-40px;border-radius:50%;background:rgba(245,237,224,.55);animation:drift 11s linear infinite}
+.btn{transition:transform .2s ease}
+.btn:hover{transform:translateY(-3px)}
+.card{transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s ease}
+.card:hover{transform:translateY(-10px) rotate(-.6deg);box-shadow:0 24px 48px rgba(42,33,28,.25)}
+.row{transition:background .3s ease,padding .3s ease}
+.row:hover{background:#F2DFB0;padding-left:16px;padding-right:16px}
+@supports (animation-timeline: view()){.reveal{animation:rise linear both;animation-timeline:view();animation-range:entry 0% cover 28%}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+
+.navtoggle{display:none}
+@media (max-width: 860px){
+  .navtoggle{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border:2px solid #2A211C;background:transparent;color:#2A211C;cursor:pointer}
+  header nav{display:none !important;width:100%;flex-direction:column;align-items:stretch !important;gap:4px !important;padding-top:8px}
+  header nav a{padding:12px 4px !important;font-size:18px !important}
+  header.open nav{display:flex !important}
+}
+@media (max-width: 600px){
+  h1{font-size:clamp(40px,11vw,64px) !important}
+  h2{font-size:clamp(34px,9.5vw,56px) !important}
+  h1,h2,h3{overflow-wrap:anywhere}
+}
+</style>
+</head>
+<body>
+<div style="font-family: 'Work Sans', sans-serif; color: #2A211C; background: #F5EDE0; font-size: 17px; line-height: 1.55; overflow-x: hidden">
+
+<header style="border-bottom: 1px solid #DCCFBB">
+<div style="max-width: 1240px; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px">
+<a href="/" style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 30px; letter-spacing: 0.04em; text-decoration: none; color: #2A211C">LOJÁN GERGŐ</a>
+<button type="button" class="navtoggle" aria-label="Menü" aria-expanded="false"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+<nav aria-label="Fő menü" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; font-size: 15px; font-weight: 500">
+<a href="/ismerkedos-estek/" style="text-decoration: none; font-weight: 700; border-bottom: 3px solid #D9A32E">Ismerkedős estek</a>
+<a href="/treningek/" style="text-decoration: none">Tréningek</a>
+<a href="/csaladallitas/" style="text-decoration: none">Családállítás</a>
+<a href="/egyeni-konzultacio/" style="text-decoration: none">Egyéni konzultáció</a>
+<a href="/rolam/" style="text-decoration: none">Rólam</a>
+<a href="/#teszt" class="btn" style="text-decoration: none; background: #D9A32E; color: #2A211C; padding: 12px 18px; font-weight: 600">Teszt</a>
+<a href="/#alkalmak" class="btn" style="text-decoration: none; background: #2A211C; color: #F5EDE0; padding: 12px 18px; font-weight: 600">Időpontok</a>
+</nav>
+</div>
+</header>
+
+<section style="background: #D9A32E; color: #2A211C; position: relative; overflow: hidden">
+<div aria-hidden="true" style="position: absolute; inset: 0; overflow: hidden">
+<div class="bub" style="left: 6%; width: 18px; height: 18px; animation-delay: 0s"></div>
+<div class="bub" style="left: 18%; width: 30px; height: 30px; animation-delay: 3s; animation-duration: 14s"></div>
+<div class="bub" style="left: 32%; width: 12px; height: 12px; animation-delay: 6s"></div>
+<div class="bub" style="left: 47%; width: 24px; height: 24px; animation-delay: 1.5s; animation-duration: 13s"></div>
+<div class="bub" style="left: 58%; width: 16px; height: 16px; animation-delay: 8s"></div>
+<div class="bub" style="left: 72%; width: 34px; height: 34px; animation-delay: 4.5s; animation-duration: 16s"></div>
+<div class="bub" style="left: 88%; width: 20px; height: 20px; animation-delay: 2s; animation-duration: 12s"></div>
+</div>
+<div style="position: relative; max-width: 1240px; margin: 0 auto; padding: 88px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 56px">
+<div style="flex: 999 1 520px; min-width: 0">
+<p class="rise" style="margin: 0 0 20px; display: inline-flex; align-items: center; gap: 10px; background: #2A211C; color: #F5EDE0; font-size: 14px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 8px 14px">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h11a3 3 0 1 0-3-3"></path><path d="M3 12h15a3 3 0 1 1-3 3"></path><path d="M3 16h7"></path></svg>
+Levegő · Ismerkedős estek</p>
+<h1 class="rise d1" style="margin: 0 0 24px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(60px, 8vw, 120px); line-height: 0.9; text-transform: uppercase">Új emberek, kötetlenül, tét nélkül.</h1>
+<p class="rise d2" style="margin: 0 0 36px; font-size: 21px; max-width: 30em">Egy este, ahol a beszélgetés magától indul be, mert mindenki ugyanazért jött: kapcsolódni.</p>
+<div class="rise d3" style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px 20px">
+<a href="https://u2vibe.com" class="btn" style="background: #2A211C; color: #F5EDE0; text-decoration: none; font-weight: 700; font-size: 18px; padding: 18px 30px" target="_blank" rel="noopener">Következő estek a u2vibe.com-on →</a>
+<span style="font-size: 15px; font-weight: 600">Jegyek 5 990 Ft-tól</span>
+</div>
+</div>
+<div class="rise d2" style="flex: 1 1 380px; min-width: 0; position: relative">
+<div style="overflow: hidden">
+<img class="kb" src="/img/est-terasz.jpg" alt="Mosolygó résztvevő egy esti, tetőteraszos ismerkedős eseményen" style="display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 30% center">
+</div>
+<div class="float" style="position: absolute; left: -16px; bottom: 32px; background: #2A211C; color: #F5EDE0; padding: 14px 20px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; font-size: 24px; text-transform: uppercase">3000+ résztvevő</div>
+</div>
+</div>
+</section>
+
+<section style="max-width: 1240px; margin: 0 auto; padding: 104px 24px 96px">
+<h2 class="reveal" style="margin: 0 0 32px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(44px, 5vw, 72px); line-height: 0.95; text-transform: uppercase">Ismerős?</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
+<div class="card reveal" style="background: #D9A32E; padding: 28px; display: flex; flex-direction: column; gap: 16px">
+<span style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 48px; line-height: 1">01</span>
+<p style="margin: 0; font-size: 19px; font-weight: 500">Mindig ugyanazokkal találkozol, ugyanott.</p>
+</div>
+<div class="card reveal" style="background: #D9A32E; padding: 28px; display: flex; flex-direction: column; gap: 16px">
+<span style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 48px; line-height: 1">02</span>
+<p style="margin: 0; font-size: 19px; font-weight: 500">Az appokban elfáradtál, de élőben nincs hol megismerni valakit.</p>
+</div>
+<div class="card reveal" style="background: #D9A32E; padding: 28px; display: flex; flex-direction: column; gap: 16px">
+<span style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 48px; line-height: 1">03</span>
+<p style="margin: 0; font-size: 19px; font-weight: 500">Egyedül nem mennél el egy programra.</p>
+</div>
+<div class="card reveal" style="background: #D9A32E; padding: 28px; display: flex; flex-direction: column; gap: 16px">
+<span style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 48px; line-height: 1">04</span>
+<p style="margin: 0; font-size: 19px; font-weight: 500">Vágysz egy közösségre, ahol jó lenni.</p>
+</div>
+</div>
+</section>
+
+<section style="background: #2A211C; color: #F5EDE0">
+<div style="max-width: 1240px; margin: 0 auto; padding: 104px 24px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center">
+<div class="reveal" style="flex: 1 1 380px; min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+<div style="overflow: hidden; grid-column: span 2">
+<img src="/img/est-mikrofon.jpg" alt="Gergő mikrofonnal köszönti a résztvevőket" style="display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: center 25%">
+</div>
+<div style="overflow: hidden; grid-column: span 2">
+<img src="/img/est-asztal.jpg" alt="Gergő egy asztal mellett beszélget a résztvevőkkel" style="display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: center 40%">
+</div>
+</div>
+<div style="flex: 999 1 480px; min-width: 0">
+<h2 class="reveal" style="margin: 0 0 36px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(44px, 5vw, 72px); line-height: 0.95; text-transform: uppercase">Hogyan zajlik egy este?</h2>
+<div style="display: flex; flex-direction: column; gap: 22px">
+<div class="reveal" style="display: flex; gap: 18px; align-items: flex-start">
+<span style="flex: 0 0 auto; width: 44px; height: 44px; border-radius: 50%; background: #D9A32E; color: #2A211C; display: flex; align-items: center; justify-content: center; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 22px">1</span>
+<p style="margin: 0; font-size: 19px"><strong>Kis asztaloknál ülsz</strong>, 4–5 emberrel, és kb. félóránként új asztaltársaság jön.</p>
+</div>
+<div class="reveal" style="display: flex; gap: 18px; align-items: flex-start">
+<span style="flex: 0 0 auto; width: 44px; height: 44px; border-radius: 50%; background: #D9A32E; color: #2A211C; display: flex; align-items: center; justify-content: center; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 22px">2</span>
+<p style="margin: 0; font-size: 19px"><strong>Minden körben más jégtörő játék</strong> vagy nyitókérdés segít, így nincs kínos csend.</p>
+</div>
+<div class="reveal" style="display: flex; gap: 18px; align-items: flex-start">
+<span style="flex: 0 0 auto; width: 44px; height: 44px; border-radius: 50%; background: #D9A32E; color: #2A211C; display: flex; align-items: center; justify-content: center; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 22px">3</span>
+<p style="margin: 0; font-size: 19px"><strong>Korcsoportok szerinti ültetés</strong>, hogy hasonló életszakaszban lévőkkel beszélgess.</p>
+</div>
+<div class="reveal" style="display: flex; gap: 18px; align-items: flex-start">
+<span style="flex: 0 0 auto; width: 44px; height: 44px; border-radius: 50%; background: #D9A32E; color: #2A211C; display: flex; align-items: center; justify-content: center; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 22px">4</span>
+<p style="margin: 0; font-size: 19px"><strong>Megismered a U2Vibe 5 személyiségtípusát</strong> és az erősségeiket, így önismeretet is viszel haza.</p>
+</div>
+</div>
+<p class="reveal" style="margin: 32px 0 0; padding-top: 20px; border-top: 1px solid #6B5B4E; color: #D8C9B4">Dress code: smart casual</p>
+</div>
+</div>
+</section>
+
+<section style="max-width: 1240px; margin: 0 auto; padding: 104px 24px">
+<div class="reveal" style="border: 3px solid #2A211C; padding: clamp(32px, 5vw, 64px); display: flex; flex-wrap: wrap; align-items: center; gap: 32px 56px">
+<h2 style="flex: 1 1 360px; margin: 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(44px, 5vw, 76px); line-height: 0.92; text-transform: uppercase">Miben más?</h2>
+<p style="flex: 999 1 420px; margin: 0; font-size: 21px">A fókuszban a <strong>pártalálás</strong> és egy <strong>közösség építése</strong> áll, nem egyszeri ismerkedés. Olyan közeget teremtünk, ahová szívesen visszajössz, és ahol egyre több ismerős arc vár.</p>
+</div>
+</section>
+
+<section style="background: #F2E2BC">
+<div style="max-width: 1240px; margin: 0 auto; padding: 96px 24px">
+<div class="reveal" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px 40px; margin-bottom: 36px">
+<h2 style="margin: 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(44px, 5vw, 72px); line-height: 0.95; text-transform: uppercase">Következő estek</h2>
+<p style="margin: 0; color: #5A4C42">Havonta több alkalom · változó budapesti helyszínek · 5 990 Ft-tól</p>
+</div>
+<div style="border-top: 2px solid #2A211C">
+<div class="row reveal" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 32px; padding: 24px 0; border-bottom: 1px solid #C9B9A0">
+<div style="flex: 0 0 140px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; font-size: 28px; line-height: 1; text-transform: uppercase">[Dátum]</div>
+<div style="flex: 999 1 320px; min-width: 0">
+<p style="margin: 0; font-size: 20px; font-weight: 600">[Az est címe]</p>
+<p style="margin: 0; font-size: 15px; color: #5A4C42">[Helyszín] · [Ár] · korcsoportos ültetés</p>
+</div>
+<a href="https://u2vibe.com" class="btn" style="flex: 0 0 auto; background: #2A211C; color: #F5EDE0; text-decoration: none; font-weight: 600; padding: 12px 20px" target="_blank" rel="noopener">Jegyek →</a>
+</div>
+<div class="row reveal" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 32px; padding: 24px 0; border-bottom: 1px solid #C9B9A0">
+<div style="flex: 0 0 140px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; font-size: 28px; line-height: 1; text-transform: uppercase">[Dátum]</div>
+<div style="flex: 999 1 320px; min-width: 0">
+<p style="margin: 0; font-size: 20px; font-weight: 600">[Az est címe]</p>
+<p style="margin: 0; font-size: 15px; color: #5A4C42">[Helyszín] · [Ár] · korcsoportos ültetés</p>
+</div>
+<a href="https://u2vibe.com" class="btn" style="flex: 0 0 auto; background: #2A211C; color: #F5EDE0; text-decoration: none; font-weight: 600; padding: 12px 20px" target="_blank" rel="noopener">Jegyek →</a>
+</div>
+</div>
+<p class="reveal" style="margin: 24px 0 0; color: #5A4C42">A jegyvásárlás és az aktuális korcsoportok a u2vibe.com-on érhetők el.</p>
+</div>
+</section>
+
+<section style="background: #D9A32E; color: #2A211C">
+<div class="reveal" style="max-width: 1240px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 32px">
+<h2 style="margin: 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(44px, 5vw, 80px); line-height: 0.92; text-transform: uppercase; max-width: 10em">Gyere el egy estére.</h2>
+<div style="display: flex; flex-direction: column; gap: 14px; align-items: flex-start">
+<a href="https://u2vibe.com" class="btn" style="background: #2A211C; color: #F5EDE0; text-decoration: none; font-weight: 700; font-size: 19px; padding: 20px 34px" target="_blank" rel="noopener">Jegyek a u2vibe.com-on →</a>
+<a href="/#teszt" style="color: #2A211C; font-weight: 600">Nem vagy biztos benne? Töltsd ki a 2 perces tesztet →</a>
+</div>
+</div>
+</section>
+
+<footer style="background: #F5EDE0; border-top: 1px solid #DCCFBB">
+<div style="max-width: 1240px; margin: 0 auto; padding: 48px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px 32px; font-size: 15px">
+<span style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 24px; letter-spacing: 0.04em">LOJÁN GERGŐ</span>
+<span><a href="/aszf/">ÁSZF</a> · <a href="/adatkezeles/">Adatkezelés</a> · <a href="/impresszum/">Impresszum</a></span>
+</div>
+</footer>
+
+</div>
+<script>
+document.querySelectorAll('header').forEach(function(h){
+  var b=h.querySelector('.navtoggle'); if(!b) return;
+  b.addEventListener('click',function(){var o=h.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});
+});
+</script>
+</body>
+</html>
