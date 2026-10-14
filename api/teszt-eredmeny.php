@@ -24,10 +24,11 @@ $nev = trim(mb_substr((string)($in['nev'] ?? ''), 0, 60));
 $email = trim(mb_strtolower((string)($in['email'] ?? '')));
 $elem = (string)($in['elem'] ?? '');
 $masodik = (string)($in['masodik'] ?? '');
-$hozzajarulas = !empty($in['hozzajarulas']);
+$hirlevel = !empty($in['hirlevel']);   // 1. pipa: hírlevél (nem kötelező)
+$eredmeny = !empty($in['eredmeny']);   // 2. pipa: teszteredmény e-mailben (kötelező)
 
 $ELEMEK = ['L', 'T', 'V', 'F'];
-if ($nev === '' || !filter_var($email, FILTER_VALIDATE_EMAIL) || !in_array($elem, $ELEMEK, true) || !$hozzajarulas) fail(422, 'invalid');
+if ($nev === '' || !filter_var($email, FILTER_VALIDATE_EMAIL) || !in_array($elem, $ELEMEK, true) || !$eredmeny) fail(422, 'invalid');
 if (!in_array($masodik, $ELEMEK, true) || $masodik === $elem) $masodik = '';
 
 // egyszerű korlát: IP-nként óránként max. 5 beküldés
@@ -57,7 +58,27 @@ function brevo($path, $payload, $key) {
     return [$code, $body];
 }
 
-// 1) kapcsolat létrehozása / frissítése a listán
+function brevo_attr($name, $type, $key) {
+    $ch = curl_init('https://api.brevo.com/v3/contacts/attributes/normal/' . $name);
+    curl_setopt_array($ch, [
+        CURLOPT_CUSTOMREQUEST => 'POST', CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 10,
+        CURLOPT_HTTPHEADER => ['accept: application/json', 'content-type: application/json', 'api-key: ' . $key],
+        CURLOPT_POSTFIELDS => json_encode(['type' => $type]),
+    ]);
+    curl_exec($ch); curl_close($ch); // ha már létezik, a Brevo hibát ad: ez rendben van
+}
+
+// 0) a saját mezők létrehozása a Brevóban (csak egyszer fut le)
+$flag = $rlDir . '/attrs-ok';
+if (!is_file($flag)) {
+    brevo_attr('ELEM', 'text', $cfg['brevo_api_key']);
+    brevo_attr('MASODIK_ELEM', 'text', $cfg['brevo_api_key']);
+    brevo_attr('TESZT_DATUM', 'date', $cfg['brevo_api_key']);
+    @touch($flag);
+}
+
+// 1) hírlevél-feliratkozás: csak ha az 1. pipát bejelölte
+if ($hirlevel) {
 [$c1, $b1] = brevo('/contacts', [
     'email' => $email,
     'attributes' => [
@@ -70,6 +91,7 @@ function brevo($path, $payload, $key) {
     'updateEnabled' => true,
 ], $cfg['brevo_api_key']);
 if ($c1 >= 300 && $c1 !== 204) { error_log('Brevo contact ' . $c1 . ' ' . $b1); fail(502, 'brevo'); }
+}
 
 // 2) az eredmény-levél
 $e = fn($t) => htmlspecialchars($t, ENT_QUOTES, 'UTF-8');
@@ -99,7 +121,9 @@ $html = '<!doctype html><html lang="hu"><body style="margin:0;background:#F5EDE0
 ' . $second . '
 <p style="margin:28px 0 0">Gergő</p>
 </td></tr>
-<tr><td style="padding:20px 32px;font-size:12px;color:#5A4C42;background:#EADFCB">Ezt a levelet azért kaptad, mert kitöltötted a tesztet a lojangergo.com oldalon, és feliratkoztál a hírlevelemre. Ha nem szeretnél több levelet, <a href="mailto:hello@lojangergo.com?subject=Leiratkoz%C3%A1s" style="color:#5A4C42">írj nekem egy rövid üzenetet</a>, vagy kattints bármelyik hírlevél alján a leiratkozás linkre.</td></tr>
+<tr><td style="padding:20px 32px;font-size:12px;color:#5A4C42;background:#EADFCB">' . ($hirlevel
+  ? 'Ezt a levelet azért kaptad, mert kitöltötted a tesztet a lojangergo.com oldalon, és feliratkoztál a hírlevelemre. Ha nem szeretnél több levelet, <a href="mailto:hello@lojangergo.com?subject=Leiratkoz%C3%A1s" style="color:#5A4C42">írj nekem egy rövid üzenetet</a>, vagy kattints bármelyik hírlevél alján a leiratkozás linkre.'
+  : 'Ezt a levelet azért kaptad, mert kitöltötted a tesztet a lojangergo.com oldalon, és kérted az eredményedet. Ezen kívül nem küldök neked leveleket.') . '</td></tr>
 </table></td></tr></table></body></html>';
 
 [$c2, $b2] = brevo('/smtp/email', [

@@ -124,8 +124,12 @@ a{color:#2A211C}a:hover{color:#B24A26}
 </label>
 <div aria-hidden="true" style="position: absolute; left: -9999px"><label>Weboldal <input type="text" name="weboldal" tabindex="-1" autocomplete="off"></label></div>
 <label style="display: flex; align-items: flex-start; gap: 12px; font-size: 15px; line-height: 1.5">
-<input type="checkbox" name="hozzajarulas" required style="width: 22px; height: 22px; margin: 2px 0 0; flex: 0 0 auto">
-<span>Kérem az eredményemet e-mailben, és hozzájárulok, hogy Loján Gergő hírlevelet küldjön nekem a kapcsolódás, az önismeret és a párkapcsolatok témájában. Bármikor leiratkozhatok. Az <a href="/adatkezeles/" style="color: #F5EDE0">adatkezelési tájékoztatót</a> elolvastam.</span>
+<input type="checkbox" name="hirlevel" style="width: 22px; height: 22px; margin: 2px 0 0; flex: 0 0 auto">
+<span>Feliratkozom a hírlevélre: Loján Gergő e-mailben küldhet nekem gondolatokat, gyakorlatokat és programajánlókat a kapcsolódás, az önismeret és a párkapcsolatok témájában. Bármikor leiratkozhatok.</span>
+</label>
+<label style="display: flex; align-items: flex-start; gap: 12px; font-size: 15px; line-height: 1.5">
+<input type="checkbox" name="eredmeny" required style="width: 22px; height: 22px; margin: 2px 0 0; flex: 0 0 auto">
+<span>Kérem a teszteredményemet e-mailben. Az <a href="/adatkezeles/" style="color: #F5EDE0">adatkezelési tájékoztatót</a> elolvastam.</span>
 </label>
 <p id="ferr" role="alert" hidden style="margin: 0; padding: 14px 16px; background: #B24A26; color: #FFFFFF; font-size: 15px"></p>
 <button type="submit" id="fsend" class="btn" style="align-self: flex-start; font-family: 'Work Sans', sans-serif; font-size: 20px; font-weight: 700; padding: 20px 40px; border: 0; background: #D9A32E; color: #2A211C; cursor: pointer">Kérem az eredményem →</button>
@@ -204,7 +208,7 @@ form.addEventListener("submit",function(e){
   var b=$("fsend"); b.disabled=true; b.textContent="Küldés…";
   fetch("/api/teszt-eredmeny.php",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({
     nev:form.nev.value, email:form.email.value, weboldal:form.weboldal.value,
-    hozzajarulas:form.hozzajarulas.checked, elem:best, masodik:second })})
+    hirlevel:form.hirlevel.checked, eredmeny:form.eredmeny.checked, elem:best, masodik:second })})
   .then(function(r){return r.json().catch(function(){return {ok:false}})})
   .then(function(d){
     if(d&&d.ok){ show("s-sent"); $("senth").focus({preventScroll:true}); return; }

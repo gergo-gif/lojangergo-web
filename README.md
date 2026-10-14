@@ -22,4 +22,4 @@ return [
 - `api/teszt-eredmeny.php`: feliratkoztat a Brevo-listára, és elküldi az eredménylevelet
 - `private/teszt-eredmenyek.php`: a négy eredmény szövege (Szél, Parázs, Mélyvíz, Fa)
 
-A Brevóban szükséges kapcsolat-attribútumok: `FIRSTNAME`, `ELEM` (szöveg), `MASODIK_ELEM` (szöveg), `TESZT_DATUM` (dátum).
+A Brevo-mezőket (`ELEM`, `MASODIK_ELEM`, `TESZT_DATUM`) az első beküldés automatikusan létrehozza. Hírlevél-listára csak az kerül, aki az első pipát bejelöli.
