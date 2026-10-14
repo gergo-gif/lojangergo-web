@@ -7,6 +7,7 @@ RewriteRule ^ https://lojangergo.com%{REQUEST_URI} [L,R=301]
 # A belső fájlok (pl. későbbi beállítások) ne legyenek elérhetők
 RedirectMatch 404 /\.git
 RedirectMatch 404 /private/
+RedirectMatch 404 /README\.md
 
 ErrorDocument 404 /404.html
 

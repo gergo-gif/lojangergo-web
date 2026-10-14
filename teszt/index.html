@@ -110,42 +110,35 @@ a{color:#2A211C}a:hover{color:#B24A26}
 </div>
 </section>
 
-<!-- EREDMÉNY -->
-<section id="s-result" class="screen" hidden style="position: relative">
-<div id="rhead" style="padding: 88px 24px 72px">
-<div style="max-width: 1040px; margin: 0 auto">
-<p class="rise" style="margin: 0 0 16px; font-size: 14px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase">Az eredményed</p>
-<p id="relem" class="rise d1" style="margin: 0 0 8px; font-size: 20px; font-weight: 600"></p>
-<h1 id="rname" class="pop" style="margin: 0 0 24px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(72px, 12vw, 180px); line-height: 0.85; text-transform: uppercase"></h1>
-<p id="rlead" class="rise d2" style="margin: 0; font-size: 21px; max-width: 34em"></p>
-</div>
-</div>
-<div style="background: #F5EDE0; color: #2A211C">
-<div style="max-width: 1040px; margin: 0 auto; padding: 72px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px">
-<div>
-<h2 style="margin: 0 0 16px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 36px; line-height: 1; text-transform: uppercase">Honnan ismerheted fel?</h2>
-<p id="rsigns" style="margin: 0; font-size: 18px"></p>
-</div>
-<div>
-<h2 style="margin: 0 0 16px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 36px; line-height: 1; text-transform: uppercase">Amit már ma megtehetsz</h2>
-<ol id="rtodo" style="margin: 0; padding-left: 22px; font-size: 18px; display: flex; flex-direction: column; gap: 10px"></ol>
-</div>
-</div>
-<div style="max-width: 1040px; margin: 0 auto; padding: 0 24px 72px">
-<div id="rnext" style="padding: clamp(28px, 4vw, 48px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px">
-<div style="flex: 999 1 420px; min-width: 0">
-<p style="margin: 0 0 10px; font-size: 14px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase">A következő lépés</p>
-<p id="rnexttext" style="margin: 0; font-size: 19px"></p>
-</div>
-<a id="rcta" class="btn" href="/" style="flex: 0 0 auto; background: #F5EDE0; color: #2A211C; text-decoration: none; font-weight: 700; font-size: 18px; padding: 18px 28px"></a>
-</div>
-<p id="rsecond" style="margin: 28px 0 0; font-size: 17px"></p>
-<div style="margin-top: 36px; display: flex; flex-wrap: wrap; gap: 20px; align-items: center">
-<button type="button" id="again" style="font-family: 'Work Sans', sans-serif; background: transparent; border: 2px solid #2A211C; color: #2A211C; font-weight: 600; font-size: 16px; padding: 14px 22px; cursor: pointer">Újrakezdem a tesztet</button>
-<a href="/" style="font-weight: 600">Vissza a főoldalra</a>
-</div>
-</div>
-</div>
+<!-- E-MAIL -->
+<section id="s-email" class="screen" hidden style="position: relative; max-width: 760px; margin: 0 auto; padding: 88px 24px 104px">
+<p class="rise" style="margin: 0 0 20px; display: inline-block; background: #D9A32E; color: #2A211C; font-size: 14px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 8px 14px">10 / 10 · Kész vagy!</p>
+<h2 class="rise d1" style="margin: 0 0 20px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(44px, 6vw, 84px); line-height: 0.92; text-transform: uppercase">Megvan az elemed. Hova küldjem?</h2>
+<p class="rise d2" style="margin: 0 0 36px; font-size: 19px; color: #E6DACA">Az eredményed részletes leírással, három gyakorlati lépéssel és személyre szabott javaslattal e-mailben érkezik.</p>
+<form id="emailform" class="rise d3" novalidate style="display: flex; flex-direction: column; gap: 20px">
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase">Keresztnév
+<input type="text" name="nev" required maxlength="60" autocomplete="given-name" placeholder="pl. Anna" style="font-family: 'Work Sans', sans-serif; font-size: 18px; padding: 16px; border: 0; background: #F5EDE0; color: #2A211C; text-transform: none; letter-spacing: 0">
+</label>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase">E-mail-cím
+<input type="email" name="email" required autocomplete="email" placeholder="anna@pelda.hu" style="font-family: 'Work Sans', sans-serif; font-size: 18px; padding: 16px; border: 0; background: #F5EDE0; color: #2A211C; text-transform: none; letter-spacing: 0">
+</label>
+<div aria-hidden="true" style="position: absolute; left: -9999px"><label>Weboldal <input type="text" name="weboldal" tabindex="-1" autocomplete="off"></label></div>
+<label style="display: flex; align-items: flex-start; gap: 12px; font-size: 15px; line-height: 1.5">
+<input type="checkbox" name="hozzajarulas" required style="width: 22px; height: 22px; margin: 2px 0 0; flex: 0 0 auto">
+<span>Kérem az eredményemet e-mailben, és hozzájárulok, hogy Loján Gergő hírlevelet küldjön nekem a kapcsolódás, az önismeret és a párkapcsolatok témájában. Bármikor leiratkozhatok. Az <a href="/adatkezeles/" style="color: #F5EDE0">adatkezelési tájékoztatót</a> elolvastam.</span>
+</label>
+<p id="ferr" role="alert" hidden style="margin: 0; padding: 14px 16px; background: #B24A26; color: #FFFFFF; font-size: 15px"></p>
+<button type="submit" id="fsend" class="btn" style="align-self: flex-start; font-family: 'Work Sans', sans-serif; font-size: 20px; font-weight: 700; padding: 20px 40px; border: 0; background: #D9A32E; color: #2A211C; cursor: pointer">Kérem az eredményem →</button>
+</form>
+<button type="button" id="back2" style="margin-top: 28px; font-family: 'Work Sans', sans-serif; background: transparent; border: 0; color: #D8C9B4; font-size: 14px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; padding: 8px 0">← Vissza a kérdésekhez</button>
+</section>
+
+<!-- ELKÜLDVE -->
+<section id="s-sent" class="screen" hidden style="position: relative; max-width: 760px; margin: 0 auto; padding: 104px 24px 120px">
+<h2 class="pop" tabindex="-1" id="senth" style="margin: 0 0 24px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(56px, 8vw, 112px); line-height: 0.9; text-transform: uppercase">Elküldtem!</h2>
+<p style="margin: 0 0 16px; font-size: 21px">Pár percen belül megérkezik az eredményed a postafiókodba.</p>
+<p style="margin: 0 0 36px; font-size: 17px; color: #D8C9B4">Ha nem találod, nézd meg a Promóciók vagy a Spam mappát is, és jelöld meg a levelet, hogy a következők biztosan megérkezzenek.</p>
+<a href="/" class="btn" style="display: inline-block; background: #F5EDE0; color: #2A211C; text-decoration: none; font-weight: 700; font-size: 18px; padding: 18px 30px">Vissza a főoldalra</a>
 </section>
 </main>
 
@@ -173,36 +166,10 @@ var Q=[
  ["Melyik mondat a legigazabb rád most?",["„Kapcsolódnék, csak nincs hol.”","„Tudom, hogy többre vagyok képes.”","„Sok minden van bennem, amit még nem teljesen értek.”","„Mintha leláncolnának nehéz érzések.”"]]
 ];
 var EL=["L","T","V","F"]; // válaszok sorrendje minden kérdésnél: Levegő, Tűz, Víz, Föld
-var R={
- L:{elem:"Levegő",name:"A Szél",bg:"#D9A32E",fg:"#2A211C",
-  lead:"A levegő természete, hogy áramlik. Benned megvan a nyitottság és a kíváncsiság, emberek között éledsz fel igazán. Az elakadásod ezért nem benned van, hanem körülötted: beszűkült a kör, ismétlődnek a helyek és az arcok, és nincs hol szabadon fújnod.",
-  signs:"Ugyanazokkal találkozol, ugyanott. Lelkesedsz egy programért, de egyedül nem mész el. Hiányoznak a spontán találkozások, amelyekből valami új indulhatna.",
-  todo:["Vezess be egy „heti egy újat”: új hely, új program vagy egy új ember.","Mondj igent egy meghívásra, amire alapból nemet mondanál.","Keress olyan közeget, ahol a kapcsolódás maga a cél, nem csak mellékhatás."],
-  next:"Pont az ilyen helyzetekre szervezem az ismerkedős esteket. Kis asztaloknál, 4–5 emberrel beszélgetsz, és a körök az este során cserélődnek. Nincs tét, nincs kínos csend, csak új emberek, akik ugyanazért jöttek, mint te.",
-  cta:"Nézd meg az estéket →",href:"/ismerkedos-estek/"},
- T:{elem:"Tűz",name:"A Parázs",bg:"#B24A26",fg:"#FFFFFF",
-  lead:"A parázsban ott a hő, csak még nem lobbant lángra. Benned is rengeteg van: vágyak, tehetség, ötletek. Ami hiányzik, az az irány vagy a bátorság, hogy megmutasd. A parázsnak oxigén kell: egy tiszta cél és egy első lépés.",
-  signs:"Halogatsz, és azt mondod magadnak: „majd ha készen állok”. Lelkesen kezdesz bele dolgokba, aztán elfogy a lendület. Ismerkedésnél ott a lehetőség, de lefagysz.",
-  todo:["Írd le: mit csinálnál, ha biztos lennél benne, hogy nem hibázhatsz?","Tegyél ma egy 10 perces lépést felé. A lángot a mozgás lobbantja fel, nem a tervezés.","Figyeld meg a belső kritikusodat, és kérdezd meg magadtól: kinek a hangja ez valójában?"],
-  next:"Két műhelyt indítok: a Vonzerő Műhelyt az ismerkedéshez és az önbizalomhoz, a Belső Iránytű Műhelyt pedig ahhoz, hogy megtaláld, mi hajt valójában.",
-  cta:"Nézd meg a tréningeket →",href:"/treningek/"},
- V:{elem:"Víz",name:"A Mélyvíz",bg:"#1F5A63",fg:"#FFFFFF",
-  lead:"A felszínen nyugodt vagy, de alatta sok minden mozog. Mélyen érzel és gondolkodsz, és vannak dolgok benned, amelyeket még te magad sem értesz teljesen. Az elakadásod az, hogy ezeknek eddig nem volt biztonságos helyük.",
-  signs:"Sokat gondolkodsz, és keveset mondasz ki. Csoportban inkább visszahúzódsz. Gyakran érzed, hogy mások úgysem értenék. Vannak érzéseid, amelyeknek nem tudod a nevét.",
-  todo:["Írj naponta 5 percet ezzel a kezdéssel: „Most azt érzem, hogy…” Nem kell szépnek lennie.","Válassz ki egy embert, akinek ezen a héten egy kicsivel többet mondasz el, mint szoktál.","Kérdezd meg magadtól: mit nem mondok ki, és mi történne, ha kimondanám?"],
-  next:"Neked a négyszemközti tér való. Az egyéni konzultáción csak rólad van szó, a te tempódban, ítélkezés nélkül. Itt az is felszínre jöhet, ami csoportban sosem.",
-  cta:"Foglald le az első beszélgetést →",href:"/egyeni-konzultacio/"},
- F:{elem:"Föld",name:"A Fa",bg:"#4F5A2A",fg:"#FFFFFF",
-  lead:"A fa erős, és megtart: te is hűséges vagy, felelősségteljes, olyan, akire lehet számítani. A gyökerek viszont nemcsak táplálnak, hanem hordoznak is: mintákat, érzéseket, terheket, amelyek nem veled kezdődtek.",
-  signs:"Ugyanaz a konfliktus tér vissza, csak más szereplőkkel. Bűntudatot érzel, amikor magadra gondolsz. Felelősnek érzed magad mások érzéseiért. Néha olyan helyzetekben találod magad, amelyek ismerősek, mert a családodban láttad őket.",
-  todo:["Írd le az egyik ismétlődő helyzetet, és kérdezd meg magadtól: hol láttam ezt először?","Válaszd szét: ebből mi az enyém, és mi az, amit csak hordozok?","Mondd ki magadban annak, akitől a terhet hoztad: „Ezt tisztelettel nálad hagyom.”"],
-  next:"A tematikus családállításokon pont ezeket a rejtett dinamikákat tesszük láthatóvá, csoportban, egy-egy konkrét témára fókuszálva. Van, amit nem lehet kibeszélni, csak megmutatni.",
-  cta:"Nézd meg a következő alkalmat →",href:"/csaladallitas/"}
-};
 var order=Q.map(function(){var a=[0,1,2,3];for(var i=3;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;});
 var picks=new Array(Q.length).fill(null), cur=0;
 var $=function(id){return document.getElementById(id)};
-function show(id){["s-start","s-quiz","s-result"].forEach(function(s){$(s).hidden=(s!==id)});window.scrollTo({top:document.querySelector('main').offsetTop,behavior:'smooth'});}
+function show(id){["s-start","s-quiz","s-email","s-sent"].forEach(function(s){$(s).hidden=(s!==id)});window.scrollTo({top:document.querySelector('main').offsetTop,behavior:'smooth'});}
 function render(){
   $("step").textContent=(cur+1)+" / "+Q.length;
   $("bar").style.width=((cur+1)/Q.length*100)+"%";
@@ -221,35 +188,38 @@ function render(){
   });
   var first=box.querySelector("button"); if(first) first.focus({preventScroll:true});
 }
+var best=null, second=null;
 function result(){
   var score={L:0,T:0,V:0,F:0};
   picks.forEach(function(k,i){ if(k!==null) score[EL[k]]+= (i===Q.length-1?2:1); });
   var last=EL[picks[Q.length-1]];
   var ranked=Object.keys(score).sort(function(a,b){ if(score[b]!==score[a]) return score[b]-score[a]; if(a===last) return -1; if(b===last) return 1; return 0; });
-  var r=R[ranked[0]], s=R[ranked[1]];
-  $("rhead").style.background=r.bg; $("rhead").style.color=r.fg;
-  $("relem").textContent=r.elem+" · ide akadt el most az áramlás";
-  $("rname").textContent=r.name;
-  $("rlead").textContent=r.lead;
-  $("rsigns").textContent=r.signs;
-  var ol=$("rtodo"); ol.innerHTML=""; r.todo.forEach(function(t){var li=document.createElement("li");li.textContent=t;ol.appendChild(li);});
-  $("rnext").style.background=r.bg; $("rnext").style.color=r.fg;
-  $("rnexttext").textContent=r.next;
-  var c=$("rcta"); c.textContent=r.cta; c.href=r.href;
-  $("rsecond").innerHTML="";
-  if(score[ranked[1]]>0){
-    $("rsecond").append("A második legerősebb elemed: ");
-    var b=document.createElement("strong"); b.textContent=s.name+" ("+s.elem+")"; $("rsecond").append(b);
-    $("rsecond").append(". Ha a kettőt együtt, személyesen szeretnéd megnézni, ");
-    var a=document.createElement("a"); a.href="/egyeni-konzultacio/"; a.textContent="foglalj egy első beszélgetést"; $("rsecond").append(a); $("rsecond").append(".");
-  }
-  show("s-result"); $("rname").focus && $("rname").setAttribute("tabindex","-1"); $("rname").focus({preventScroll:true});
+  best=ranked[0]; second=score[ranked[1]]>0?ranked[1]:"";
+  show("s-email"); var n=document.querySelector('#emailform [name=nev]'); n && n.focus({preventScroll:true});
 }
+var form=$("emailform");
+form.addEventListener("submit",function(e){
+  e.preventDefault(); $("ferr").hidden=true;
+  if(!form.reportValidity()) return;
+  var b=$("fsend"); b.disabled=true; b.textContent="Küldés…";
+  fetch("/api/teszt-eredmeny.php",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({
+    nev:form.nev.value, email:form.email.value, weboldal:form.weboldal.value,
+    hozzajarulas:form.hozzajarulas.checked, elem:best, masodik:second })})
+  .then(function(r){return r.json().catch(function(){return {ok:false}})})
+  .then(function(d){
+    if(d&&d.ok){ show("s-sent"); $("senth").focus({preventScroll:true}); return; }
+    throw new Error(d&&d.error||"hiba");
+  })
+  .catch(function(err){
+    $("ferr").textContent = String(err.message)==="rate" ? "Túl sok próbálkozás érkezett, kérlek, próbáld újra egy óra múlva." : "Valami hiba történt a küldésnél. Kérlek, próbáld újra pár perc múlva, vagy írj a hello@lojangergo.com címre.";
+    $("ferr").hidden=false; b.disabled=false; b.textContent="Kérem az eredményem →";
+  });
+});
+$("back2").addEventListener("click",function(){cur=Q.length-1;show("s-quiz");render();});
 $("start").addEventListener("click",function(){cur=0;show("s-quiz");render();});
 var qp=new URLSearchParams(location.search);
-if(qp.get("start")){ var q1=parseInt(qp.get("q1"),10); cur=0; if(q1>=0&&q1<=3){picks[0]=q1;cur=1;} ["s-start","s-quiz","s-result"].forEach(function(s){$(s).hidden=(s!=="s-quiz")}); render(); }
+if(qp.get("start")){ var q1=parseInt(qp.get("q1"),10); cur=0; if(q1>=0&&q1<=3){picks[0]=q1;cur=1;} ["s-start","s-quiz","s-email","s-sent"].forEach(function(s){$(s).hidden=(s!=="s-quiz")}); render(); }
 $("back").addEventListener("click",function(){ if(cur>0){cur--;render();} });
-$("again").addEventListener("click",function(){picks.fill(null);cur=0;show("s-quiz");render();});
 })();
 </script>
 </div>
