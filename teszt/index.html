@@ -3,40 +3,38 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hol akad meg benned az áramlás? – Teszt</title>
-<meta name="description" content="Coach, tréner és családállító. Abban segítek, hogy senki ne maradjon egyedül.">
-<meta property="og:title" content="Rólam – Loján Gergő">
-<meta property="og:description" content="Coach, tréner és családállító. Abban segítek, hogy senki ne maradjon egyedül.">
+<title>Hol akad meg benned az áramlás? – 2 perces teszt – Loján Gergő</title>
+<meta name="description" content="Tűz, víz, levegő vagy föld: 2 perc alatt kiderül, melyik elemedben van most elakadás, és mi segíthet továbblépni.">
+<link rel="canonical" href="https://lojangergo.com/teszt/">
+<meta property="og:title" content="Hol akad meg benned az áramlás?">
+<meta property="og:description" content="2 perces teszt: melyik elemedben van most elakadás, és mi segíthet továbblépni?">
 <meta property="og:image" content="https://lojangergo.com/img/hero.jpg">
 <meta property="og:type" content="website">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&amp;family=Work+Sans:wght@400;500;600&amp;display=swap">
 <style>
-body{margin:0;background:#F5EDE0}
+body{margin:0;background:#2A211C}
 a{color:#2A211C}a:hover{color:#B24A26}
-@keyframes rise{from{opacity:0;transform:translateY(48px)}to{opacity:1;transform:none}}
-@keyframes kenburns{from{transform:scale(1.15)}to{transform:scale(1)}}
-@keyframes floaty{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-12px) rotate(1deg)}}
-@keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
-@keyframes widen{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-@keyframes twinkle{0%,100%{opacity:.3;transform:scale(.8) rotate(0deg)}50%{opacity:1;transform:scale(1.1) rotate(20deg)}}
-.rise{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
-.d1{animation-delay:.1s}.d2{animation-delay:.25s}.d3{animation-delay:.4s}.d4{animation-delay:.55s}
-.kb{animation:kenburns 3s cubic-bezier(.2,.7,.2,1) both}
-.float{animation:floaty 4.5s ease-in-out infinite}
-.twinkle{animation:twinkle 3.5s ease-in-out infinite}
-@keyframes glowpulse{0%,100%{opacity:.5;transform:scale(.9)}50%{opacity:1;transform:scale(1.1)}}
-.glowpulse{animation:glowpulse 6s ease-in-out infinite}
-.seg4{transform-origin:left;animation:widen 1.2s cubic-bezier(.2,.7,.2,1) both}
+*{box-sizing:border-box}
+@keyframes rise{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:none}}
+@keyframes orbit{to{transform:rotate(360deg)}}
+@keyframes glow{0%,100%{opacity:.35}50%{opacity:.75}}
+@keyframes pop{0%{transform:scale(.6);opacity:0}70%{transform:scale(1.06);opacity:1}100%{transform:scale(1)}}
+.rise{animation:rise .6s cubic-bezier(.2,.7,.2,1) both}
+.d1{animation-delay:.08s}.d2{animation-delay:.16s}.d3{animation-delay:.24s}.d4{animation-delay:.32s}
+.orbit{animation:orbit 26s linear infinite}
+.counter{animation:orbit 26s linear infinite reverse}
+.glow{animation:glow 6s ease-in-out infinite}
+.pop{animation:pop .7s cubic-bezier(.2,.7,.2,1) both}
 .btn{transition:transform .2s ease}
 .btn:hover{transform:translateY(-3px)}
-.card{transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s ease}
-.card:hover{transform:translateY(-8px);box-shadow:0 24px 48px rgba(42,33,28,.2)}
-.line{transform-origin:top}
-@supports (animation-timeline: view()){.reveal{animation:rise linear both;animation-timeline:view();animation-range:entry 0% cover 28%}.line{animation:grow linear both;animation-timeline:view();animation-range:entry 10% cover 60%}}
+.ans{display:block;width:100%;text-align:left;font-family:'Work Sans',sans-serif;font-size:19px;font-weight:500;line-height:1.4;padding:20px 22px;border:2px solid #F5EDE0;background:transparent;color:#F5EDE0;cursor:pointer;transition:transform .2s ease,background .2s ease,color .2s ease}
+.ans:hover,.ans:focus-visible{transform:translateX(8px);background:#F5EDE0;color:#2A211C;outline:none}
+.ans.on{background:#D9A32E;border-color:#D9A32E;color:#2A211C}
+.bar{transition:width .5s cubic-bezier(.2,.7,.2,1)}
+.screen[hidden]{display:none !important}
 @media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
-
 .navtoggle{display:none}
 @media (max-width: 860px){
   .navtoggle{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border:2px solid #2A211C;background:transparent;color:#2A211C;cursor:pointer}
@@ -46,13 +44,14 @@ a{color:#2A211C}a:hover{color:#B24A26}
 }
 @media (max-width: 600px){
   h1{font-size:clamp(40px,11vw,64px) !important}
-  h2{font-size:clamp(34px,9.5vw,56px) !important}
+  h2{font-size:clamp(32px,9vw,52px) !important}
   h1,h2,h3{overflow-wrap:anywhere}
+  .counter{font-size:14px !important}
 }
 </style>
 </head>
 <body>
-<div style="font-family: 'Work Sans', sans-serif; color: #2A211C; background: #F5EDE0; font-size: 17px; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column">
+<div style="font-family: 'Work Sans', sans-serif; color: #2A211C; background: #F5EDE0; font-size: 17px; line-height: 1.55">
 <header style="border-bottom: 1px solid #DCCFBB">
 <div style="max-width: 1240px; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px">
 <a href="/" style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 30px; letter-spacing: 0.04em; text-decoration: none; color: #2A211C">LOJÁN GERGŐ</a>
@@ -68,12 +67,89 @@ a{color:#2A211C}a:hover{color:#B24A26}
 </nav>
 </div>
 </header>
-<main style="flex: 1; max-width: 900px; margin: 0 auto; padding: 120px 24px; width: 100%; box-sizing: border-box">
-<p style="margin: 0 0 16px; font-size: 14px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #B24A26">2 perces teszt</p>
-<h1 style="margin: 0 0 24px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(48px, 7vw, 96px); line-height: 0.92; text-transform: uppercase">A teszt hamarosan elindul.</h1>
-<p style="margin: 0 0 32px; font-size: 20px">Addig is foglald le az első beszélgetést, vagy nézd meg a négy ajtót a főoldalon.</p>
-<a href="/" class="btn" style="display: inline-block; background: #2A211C; color: #F5EDE0; text-decoration: none; font-weight: 700; padding: 18px 30px">Vissza a főoldalra</a>
+</div>
+
+<main style="font-family: 'Work Sans', sans-serif; color: #F5EDE0; background: #2A211C; position: relative; overflow: hidden; min-height: 80vh">
+<div class="glow" aria-hidden="true" style="position: absolute; width: 640px; height: 640px; left: -220px; top: -220px; border-radius: 50%; background: radial-gradient(circle, rgba(178,74,38,.55), rgba(178,74,38,0) 70%)"></div>
+<div class="glow" aria-hidden="true" style="position: absolute; width: 640px; height: 640px; right: -240px; bottom: -260px; border-radius: 50%; background: radial-gradient(circle, rgba(31,90,99,.6), rgba(31,90,99,0) 70%); animation-delay: 3s"></div>
+
+<!-- KEZDŐ -->
+<section id="s-start" class="screen" style="position: relative; max-width: 1240px; margin: 0 auto; padding: 88px 24px 104px; display: flex; flex-wrap: wrap; align-items: center; gap: 56px">
+<div style="flex: 999 1 480px; min-width: 0">
+<p class="rise" style="margin: 0 0 20px; display: inline-block; background: #D9A32E; color: #2A211C; font-size: 14px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 8px 14px">Ingyenes · 2 perc · 10 kérdés</p>
+<h1 class="rise d1" style="margin: 0 0 24px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(60px, 8vw, 120px); line-height: 0.88; text-transform: uppercase">Hol akad meg benned az áramlás?</h1>
+<p class="rise d2" style="margin: 0 0 14px; font-size: 21px; max-width: 30em">Tűz, víz, levegő vagy föld: 2 perc alatt kiderül, melyik elemedben van most elakadás, és mi segíthet továbblépni.</p>
+<p class="rise d2" style="margin: 0 0 36px; font-style: italic; color: #D8C9B4; font-size: 18px">Mindannyian hordozzuk a négy elemet. Az egyik most elakadt.</p>
+<button type="button" id="start" class="btn rise d3" style="font-family: 'Work Sans', sans-serif; background: #D9A32E; color: #2A211C; border: 0; font-weight: 700; font-size: 22px; padding: 22px 44px; cursor: pointer">Kezdjük →</button>
+<p class="rise d4" style="margin: 18px 0 0; font-size: 14px; color: #C9B9A0">Nincs jó vagy rossz válasz. Azt válaszd, ami most a legigazabb rád.</p>
+</div>
+<div class="rise d2" style="flex: 1 1 360px; min-width: 0; display: flex; justify-content: center">
+<div style="position: relative; width: min(420px, 82vw); aspect-ratio: 1 / 1">
+<div style="position: absolute; inset: 8%; border: 2px dashed #6B5B4E; border-radius: 50%"></div>
+<div style="position: absolute; inset: 31%; border-radius: 50%; background: #F5EDE0; color: #2A211C; display: flex; align-items: center; justify-content: center; text-align: center; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(20px, 3vw, 28px); line-height: 1; text-transform: uppercase; padding: 12px">Melyik<br>vagy te?</div>
+<div class="orbit" style="position: absolute; inset: 0">
+<div style="position: absolute; left: 50%; top: 0; width: 26%; aspect-ratio: 1 / 1; margin-left: -13%; border-radius: 50%; background: #D9A32E; color: #2A211C; display: flex; align-items: center; justify-content: center"><span class="counter" style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 18px; text-transform: uppercase">A Szél</span></div>
+<div style="position: absolute; top: 50%; right: 0; width: 26%; aspect-ratio: 1 / 1; margin-top: -13%; border-radius: 50%; background: #B24A26; color: #FFFFFF; display: flex; align-items: center; justify-content: center"><span class="counter" style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 18px; text-transform: uppercase">A Parázs</span></div>
+<div style="position: absolute; left: 50%; bottom: 0; width: 26%; aspect-ratio: 1 / 1; margin-left: -13%; border-radius: 50%; background: #4F5A2A; color: #FFFFFF; display: flex; align-items: center; justify-content: center"><span class="counter" style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 18px; text-transform: uppercase">A Fa</span></div>
+<div style="position: absolute; top: 50%; left: 0; width: 26%; aspect-ratio: 1 / 1; margin-top: -13%; border-radius: 50%; background: #1F5A63; color: #FFFFFF; display: flex; align-items: center; justify-content: center"><span class="counter" style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 18px; text-transform: uppercase">A Mélyvíz</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- KÉRDÉSEK -->
+<section id="s-quiz" class="screen" hidden style="position: relative; max-width: 860px; margin: 0 auto; padding: 72px 24px 104px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 12px; font-size: 14px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase">
+<button type="button" id="back" style="font-family: 'Work Sans', sans-serif; background: transparent; border: 0; color: #D8C9B4; font-size: 14px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; padding: 8px 0">← Vissza</button>
+<span id="step" aria-live="polite">1 / 10</span>
+</div>
+<div style="height: 8px; background: #4A3D34; margin-bottom: 40px"><div id="bar" class="bar" style="height: 8px; background: #D9A32E; width: 10%"></div></div>
+<div id="qbox">
+<h2 id="qtext" class="rise" style="margin: 0 0 32px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(36px, 4.6vw, 60px); line-height: 1; text-transform: uppercase"></h2>
+<div id="answers" style="display: flex; flex-direction: column; gap: 12px"></div>
+</div>
+</section>
+
+<!-- EREDMÉNY -->
+<section id="s-result" class="screen" hidden style="position: relative">
+<div id="rhead" style="padding: 88px 24px 72px">
+<div style="max-width: 1040px; margin: 0 auto">
+<p class="rise" style="margin: 0 0 16px; font-size: 14px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase">Az eredményed</p>
+<p id="relem" class="rise d1" style="margin: 0 0 8px; font-size: 20px; font-weight: 600"></p>
+<h1 id="rname" class="pop" style="margin: 0 0 24px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(72px, 12vw, 180px); line-height: 0.85; text-transform: uppercase"></h1>
+<p id="rlead" class="rise d2" style="margin: 0; font-size: 21px; max-width: 34em"></p>
+</div>
+</div>
+<div style="background: #F5EDE0; color: #2A211C">
+<div style="max-width: 1040px; margin: 0 auto; padding: 72px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px">
+<div>
+<h2 style="margin: 0 0 16px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 36px; line-height: 1; text-transform: uppercase">Honnan ismerheted fel?</h2>
+<p id="rsigns" style="margin: 0; font-size: 18px"></p>
+</div>
+<div>
+<h2 style="margin: 0 0 16px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 36px; line-height: 1; text-transform: uppercase">Amit már ma megtehetsz</h2>
+<ol id="rtodo" style="margin: 0; padding-left: 22px; font-size: 18px; display: flex; flex-direction: column; gap: 10px"></ol>
+</div>
+</div>
+<div style="max-width: 1040px; margin: 0 auto; padding: 0 24px 72px">
+<div id="rnext" style="padding: clamp(28px, 4vw, 48px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px">
+<div style="flex: 999 1 420px; min-width: 0">
+<p style="margin: 0 0 10px; font-size: 14px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase">A következő lépés</p>
+<p id="rnexttext" style="margin: 0; font-size: 19px"></p>
+</div>
+<a id="rcta" class="btn" href="/" style="flex: 0 0 auto; background: #F5EDE0; color: #2A211C; text-decoration: none; font-weight: 700; font-size: 18px; padding: 18px 28px"></a>
+</div>
+<p id="rsecond" style="margin: 28px 0 0; font-size: 17px"></p>
+<div style="margin-top: 36px; display: flex; flex-wrap: wrap; gap: 20px; align-items: center">
+<button type="button" id="again" style="font-family: 'Work Sans', sans-serif; background: transparent; border: 2px solid #2A211C; color: #2A211C; font-weight: 600; font-size: 16px; padding: 14px 22px; cursor: pointer">Újrakezdem a tesztet</button>
+<a href="/" style="font-weight: 600">Vissza a főoldalra</a>
+</div>
+</div>
+</div>
+</section>
 </main>
+
+<div style="font-family: 'Work Sans', sans-serif; color: #2A211C; background: #F5EDE0; font-size: 17px; line-height: 1.55">
 <footer style="background: #F5EDE0; border-top: 1px solid #DCCFBB">
 <div style="max-width: 1240px; margin: 0 auto; padding: 48px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px 32px; font-size: 15px">
 <span style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 24px; letter-spacing: 0.04em">LOJÁN GERGŐ</span>
@@ -82,6 +158,98 @@ a{color:#2A211C}a:hover{color:#B24A26}
 </footer>
 </div>
 
+<script>
+(function(){
+var Q=[
+ ["Ha őszinte vagy magadhoz, mi hiányzik most a leginkább?",["Új emberek, egy jó társaság","Egy cél, ami igazán lelkesít","Valaki, akinek tényleg mindent elmondhatnék","Hogy végre elengedjem, ami visszahúz"]],
+ ["Milyen egy átlagos hétvégéd?",["Ugyanazokkal, ugyanott, alig kerülök új emberek közé","Tervezek dolgokat, aztán a végén nem csinálom meg","Sokat vagyok egyedül a gondolataimmal","Gyakran a családi kötelezettségek viszik el"]],
+ ["Amikor új kapcsolatról vagy ismerkedésről van szó…",["…egyszerűen nincs hol megismerni valakit","…megvan a lehetőség, de lefagyok vagy nem kezdeményezek","…egy ponton túl bezárok, nehezen engedek közel","…mindig ugyanolyan emberekbe futok bele"]],
+ ["Mi szól benned leggyakrabban, amikor el szeretnél kezdeni valamit?",["„Kivel csinálnám? Egyedül nincs kedvem.”","„Majd később… úgysem vagyok még elég jó hozzá.”","„Nem tudom, hogy hogyan kezdjek neki.”","„Mit szólnának ehhez otthon?”"]],
+ ["Mit mondanak rólad azok, akik közel állnak hozzád?",["Rád férne több kimozdulás, kapcsolódás","Sokkal több van benned, mint amit mutatsz","Nehéz kiismerni, mi zajlik benned","Rád mindig lehet számítani, néha túlságosan is"]],
+ ["Ha visszanézel az elmúlt pár évre, mi ismétlődik?",["Egyre kisebb lett körülöttem a kör","Nekifutok dolgoknak, aztán elfogy a lendület","Sok mindent megéltem, amit még nem dolgoztam fel","Ugyanazok a konfliktusok, csak más szereplőkkel"]],
+ ["Mi esne most a legjobban?",["Egy laza este új emberekkel, tét nélkül","Egy tiszta irány és egy kis lökés","Egy nyugodt beszélgetés, ahol végre csak rólam van szó","Megérteni, honnan jönnek a mintáim"]],
+ ["Hogyan vagy az érzéseiddel?",["Emberek között feltöltődöm, egyedül könnyen lehangolódom","Tele vagyok vágyakkal, és frusztrál, hogy nem mozdulok","Sokat érzek, de keveset mutatok belőle","Gyakran érzek felelősséget vagy bűntudatot mások miatt"]],
+ ["Ha a családodra gondolsz…",["…szeretem őket, de vágyom egy saját közösségre is","…szeretném végre a saját utamat járni, nem az elvárásokat","…a mélyebb dolgaimról velük sem beszélek","…érzem, hogy hozok tőlük valamit, ami nem az enyém"]],
+ ["Melyik mondat a legigazabb rád most?",["„Kapcsolódnék, csak nincs hol.”","„Tudom, hogy többre vagyok képes.”","„Sok minden van bennem, amit még nem teljesen értek.”","„Mintha leláncolnának nehéz érzések.”"]]
+];
+var EL=["L","T","V","F"]; // válaszok sorrendje minden kérdésnél: Levegő, Tűz, Víz, Föld
+var R={
+ L:{elem:"Levegő",name:"A Szél",bg:"#D9A32E",fg:"#2A211C",
+  lead:"A levegő természete, hogy áramlik. Benned megvan a nyitottság és a kíváncsiság, emberek között éledsz fel igazán. Az elakadásod ezért nem benned van, hanem körülötted: beszűkült a kör, ismétlődnek a helyek és az arcok, és nincs hol szabadon fújnod.",
+  signs:"Ugyanazokkal találkozol, ugyanott. Lelkesedsz egy programért, de egyedül nem mész el. Hiányoznak a spontán találkozások, amelyekből valami új indulhatna.",
+  todo:["Vezess be egy „heti egy újat”: új hely, új program vagy egy új ember.","Mondj igent egy meghívásra, amire alapból nemet mondanál.","Keress olyan közeget, ahol a kapcsolódás maga a cél, nem csak mellékhatás."],
+  next:"Pont az ilyen helyzetekre szervezem az ismerkedős esteket. Kis asztaloknál, 4–5 emberrel beszélgetsz, és a körök az este során cserélődnek. Nincs tét, nincs kínos csend, csak új emberek, akik ugyanazért jöttek, mint te.",
+  cta:"Nézd meg az estéket →",href:"/ismerkedos-estek/"},
+ T:{elem:"Tűz",name:"A Parázs",bg:"#B24A26",fg:"#FFFFFF",
+  lead:"A parázsban ott a hő, csak még nem lobbant lángra. Benned is rengeteg van: vágyak, tehetség, ötletek. Ami hiányzik, az az irány vagy a bátorság, hogy megmutasd. A parázsnak oxigén kell: egy tiszta cél és egy első lépés.",
+  signs:"Halogatsz, és azt mondod magadnak: „majd ha készen állok”. Lelkesen kezdesz bele dolgokba, aztán elfogy a lendület. Ismerkedésnél ott a lehetőség, de lefagysz.",
+  todo:["Írd le: mit csinálnál, ha biztos lennél benne, hogy nem hibázhatsz?","Tegyél ma egy 10 perces lépést felé. A lángot a mozgás lobbantja fel, nem a tervezés.","Figyeld meg a belső kritikusodat, és kérdezd meg magadtól: kinek a hangja ez valójában?"],
+  next:"Két műhelyt indítok: a Vonzerő Műhelyt az ismerkedéshez és az önbizalomhoz, a Belső Iránytű Műhelyt pedig ahhoz, hogy megtaláld, mi hajt valójában.",
+  cta:"Nézd meg a tréningeket →",href:"/treningek/"},
+ V:{elem:"Víz",name:"A Mélyvíz",bg:"#1F5A63",fg:"#FFFFFF",
+  lead:"A felszínen nyugodt vagy, de alatta sok minden mozog. Mélyen érzel és gondolkodsz, és vannak dolgok benned, amelyeket még te magad sem értesz teljesen. Az elakadásod az, hogy ezeknek eddig nem volt biztonságos helyük.",
+  signs:"Sokat gondolkodsz, és keveset mondasz ki. Csoportban inkább visszahúzódsz. Gyakran érzed, hogy mások úgysem értenék. Vannak érzéseid, amelyeknek nem tudod a nevét.",
+  todo:["Írj naponta 5 percet ezzel a kezdéssel: „Most azt érzem, hogy…” Nem kell szépnek lennie.","Válassz ki egy embert, akinek ezen a héten egy kicsivel többet mondasz el, mint szoktál.","Kérdezd meg magadtól: mit nem mondok ki, és mi történne, ha kimondanám?"],
+  next:"Neked a négyszemközti tér való. Az egyéni konzultáción csak rólad van szó, a te tempódban, ítélkezés nélkül. Itt az is felszínre jöhet, ami csoportban sosem.",
+  cta:"Foglald le az első beszélgetést →",href:"/egyeni-konzultacio/"},
+ F:{elem:"Föld",name:"A Fa",bg:"#4F5A2A",fg:"#FFFFFF",
+  lead:"A fa erős, és megtart: te is hűséges vagy, felelősségteljes, olyan, akire lehet számítani. A gyökerek viszont nemcsak táplálnak, hanem hordoznak is: mintákat, érzéseket, terheket, amelyek nem veled kezdődtek.",
+  signs:"Ugyanaz a konfliktus tér vissza, csak más szereplőkkel. Bűntudatot érzel, amikor magadra gondolsz. Felelősnek érzed magad mások érzéseiért. Néha olyan helyzetekben találod magad, amelyek ismerősek, mert a családodban láttad őket.",
+  todo:["Írd le az egyik ismétlődő helyzetet, és kérdezd meg magadtól: hol láttam ezt először?","Válaszd szét: ebből mi az enyém, és mi az, amit csak hordozok?","Mondd ki magadban annak, akitől a terhet hoztad: „Ezt tisztelettel nálad hagyom.”"],
+  next:"A tematikus családállításokon pont ezeket a rejtett dinamikákat tesszük láthatóvá, csoportban, egy-egy konkrét témára fókuszálva. Van, amit nem lehet kibeszélni, csak megmutatni.",
+  cta:"Nézd meg a következő alkalmat →",href:"/csaladallitas/"}
+};
+var order=Q.map(function(){var a=[0,1,2,3];for(var i=3;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;});
+var picks=new Array(Q.length).fill(null), cur=0;
+var $=function(id){return document.getElementById(id)};
+function show(id){["s-start","s-quiz","s-result"].forEach(function(s){$(s).hidden=(s!==id)});window.scrollTo({top:document.querySelector('main').offsetTop,behavior:'smooth'});}
+function render(){
+  $("step").textContent=(cur+1)+" / "+Q.length;
+  $("bar").style.width=((cur+1)/Q.length*100)+"%";
+  $("back").style.visibility=cur===0?"hidden":"visible";
+  var q=$("qtext"); q.textContent=Q[cur][0]; q.classList.remove("rise"); void q.offsetWidth; q.classList.add("rise");
+  var box=$("answers"); box.innerHTML="";
+  order[cur].forEach(function(k,i){
+    var b=document.createElement("button"); b.type="button"; b.className="ans rise d"+Math.min(i+1,4);
+    b.textContent=Q[cur][1][k];
+    if(picks[cur]===k){b.classList.add("on");b.setAttribute("aria-pressed","true")}else{b.setAttribute("aria-pressed","false")}
+    b.addEventListener("click",function(){
+      picks[cur]=k; b.classList.add("on");
+      setTimeout(function(){ if(cur<Q.length-1){cur++;render();} else {result();} },280);
+    });
+    box.appendChild(b);
+  });
+  var first=box.querySelector("button"); if(first) first.focus({preventScroll:true});
+}
+function result(){
+  var score={L:0,T:0,V:0,F:0};
+  picks.forEach(function(k,i){ if(k!==null) score[EL[k]]+= (i===Q.length-1?2:1); });
+  var last=EL[picks[Q.length-1]];
+  var ranked=Object.keys(score).sort(function(a,b){ if(score[b]!==score[a]) return score[b]-score[a]; if(a===last) return -1; if(b===last) return 1; return 0; });
+  var r=R[ranked[0]], s=R[ranked[1]];
+  $("rhead").style.background=r.bg; $("rhead").style.color=r.fg;
+  $("relem").textContent=r.elem+" · ide akadt el most az áramlás";
+  $("rname").textContent=r.name;
+  $("rlead").textContent=r.lead;
+  $("rsigns").textContent=r.signs;
+  var ol=$("rtodo"); ol.innerHTML=""; r.todo.forEach(function(t){var li=document.createElement("li");li.textContent=t;ol.appendChild(li);});
+  $("rnext").style.background=r.bg; $("rnext").style.color=r.fg;
+  $("rnexttext").textContent=r.next;
+  var c=$("rcta"); c.textContent=r.cta; c.href=r.href;
+  $("rsecond").innerHTML="";
+  if(score[ranked[1]]>0){
+    $("rsecond").append("A második legerősebb elemed: ");
+    var b=document.createElement("strong"); b.textContent=s.name+" ("+s.elem+")"; $("rsecond").append(b);
+    $("rsecond").append(". Ha a kettőt együtt, személyesen szeretnéd megnézni, ");
+    var a=document.createElement("a"); a.href="/egyeni-konzultacio/"; a.textContent="foglalj egy első beszélgetést"; $("rsecond").append(a); $("rsecond").append(".");
+  }
+  show("s-result"); $("rname").focus && $("rname").setAttribute("tabindex","-1"); $("rname").focus({preventScroll:true});
+}
+$("start").addEventListener("click",function(){cur=0;show("s-quiz");render();});
+$("back").addEventListener("click",function(){ if(cur>0){cur--;render();} });
+$("again").addEventListener("click",function(){picks.fill(null);cur=0;show("s-quiz");render();});
+})();
+</script>
 </div>
 <script>
 document.querySelectorAll('header').forEach(function(h){
