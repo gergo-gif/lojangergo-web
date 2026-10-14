@@ -129,7 +129,7 @@ a{color:#2A211C}a:hover{color:#B24A26}
 <h2 style="margin: 0 0 24px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(60px, 8vw, 128px); line-height: 0.88; text-transform: uppercase">Hol akad meg benned az áramlás?</h2>
 <p style="margin: 0 0 14px; font-size: 21px; max-width: 30em">Tűz, víz, levegő vagy föld: 2 perc alatt kiderül, melyik elemedben van most elakadás, és mi segíthet továbblépni.</p>
 <p style="margin: 0 0 36px; font-style: italic; color: #D8C9B4; font-size: 18px">Mindannyian hordozzuk a négy elemet. Az egyik most elakadt.</p>
-<a href="/teszt/" class="btn pulse" style="display: inline-block; background: #D9A32E; color: #2A211C; text-decoration: none; font-weight: 700; font-size: 22px; padding: 22px 44px">Kezdjük →</a>
+<a href="/teszt/?start=1" class="btn pulse" style="display: inline-block; background: #D9A32E; color: #2A211C; text-decoration: none; font-weight: 700; font-size: 22px; padding: 22px 44px">Kezdjük →</a>
 <p style="margin: 18px 0 0; font-size: 14px; color: #C9B9A0">Az eredményt e-mailben kapod meg, személyre szabott javaslatokkal.</p>
 </div>
 
@@ -164,15 +164,15 @@ a{color:#2A211C}a:hover{color:#B24A26}
 </div>
 <h3 style="margin: 0 0 24px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(30px, 3.6vw, 48px); line-height: 1; text-transform: uppercase">Ha őszinte vagy magadhoz, mi hiányzik most a leginkább?</h3>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px">
-<button type="button" class="answer" data-answer style="text-align: left; font-family: 'Work Sans', sans-serif; font-size: 18px; font-weight: 500; padding: 20px 22px; border: 2px solid #2A211C; background: #FFFFFF; color: #2A211C">Új emberek, egy jó társaság</button>
-<button type="button" class="answer" data-answer style="text-align: left; font-family: 'Work Sans', sans-serif; font-size: 18px; font-weight: 500; padding: 20px 22px; border: 2px solid #2A211C; background: #FFFFFF; color: #2A211C">Egy cél, ami igazán lelkesít</button>
-<button type="button" class="answer" data-answer style="text-align: left; font-family: 'Work Sans', sans-serif; font-size: 18px; font-weight: 500; padding: 20px 22px; border: 2px solid #2A211C; background: #FFFFFF; color: #2A211C">Valaki, akinek tényleg mindent elmondhatnék</button>
-<button type="button" class="answer" data-answer style="text-align: left; font-family: 'Work Sans', sans-serif; font-size: 18px; font-weight: 500; padding: 20px 22px; border: 2px solid #2A211C; background: #FFFFFF; color: #2A211C">Hogy végre elengedjem, ami visszahúz</button>
+<button type="button" class="answer" data-answer data-k="0" style="text-align: left; font-family: 'Work Sans', sans-serif; font-size: 18px; font-weight: 500; padding: 20px 22px; border: 2px solid #2A211C; background: #FFFFFF; color: #2A211C">Új emberek, egy jó társaság</button>
+<button type="button" class="answer" data-answer data-k="1" style="text-align: left; font-family: 'Work Sans', sans-serif; font-size: 18px; font-weight: 500; padding: 20px 22px; border: 2px solid #2A211C; background: #FFFFFF; color: #2A211C">Egy cél, ami igazán lelkesít</button>
+<button type="button" class="answer" data-answer data-k="2" style="text-align: left; font-family: 'Work Sans', sans-serif; font-size: 18px; font-weight: 500; padding: 20px 22px; border: 2px solid #2A211C; background: #FFFFFF; color: #2A211C">Valaki, akinek tényleg mindent elmondhatnék</button>
+<button type="button" class="answer" data-answer data-k="3" style="text-align: left; font-family: 'Work Sans', sans-serif; font-size: 18px; font-weight: 500; padding: 20px 22px; border: 2px solid #2A211C; background: #FFFFFF; color: #2A211C">Hogy végre elengedjem, ami visszahúz</button>
 </div>
 
 <div class="rise" id="quiz-next" hidden style="margin-top: 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px">
 <p style="margin: 0; font-size: 19px; font-weight: 600">Jó kezdés! Még 9 kérdés, és megtudod az elemedet.</p>
-<a href="/teszt/" class="btn" style="background: #2A211C; color: #F5EDE0; text-decoration: none; font-weight: 600; padding: 16px 28px">Folytatom a tesztet →</a>
+<a href="/teszt/?start=1" class="btn" style="background: #2A211C; color: #F5EDE0; text-decoration: none; font-weight: 600; padding: 16px 28px">Folytatom a tesztet →</a>
 </div>
 
 </div>
@@ -370,6 +370,7 @@ document.querySelectorAll('header').forEach(function(h){
       document.getElementById('quiz-bar').style.width='10%';
       document.getElementById('quiz-step').textContent='1 / 10 kész';
       document.getElementById('quiz-next').hidden=false;
+      var nx=document.querySelector('#quiz-next a'); if(nx) nx.href='/teszt/?start=1&q1='+b.dataset.k;
     });
   });
 })();

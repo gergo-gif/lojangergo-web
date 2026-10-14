@@ -246,6 +246,8 @@ function result(){
   show("s-result"); $("rname").focus && $("rname").setAttribute("tabindex","-1"); $("rname").focus({preventScroll:true});
 }
 $("start").addEventListener("click",function(){cur=0;show("s-quiz");render();});
+var qp=new URLSearchParams(location.search);
+if(qp.get("start")){ var q1=parseInt(qp.get("q1"),10); cur=0; if(q1>=0&&q1<=3){picks[0]=q1;cur=1;} ["s-start","s-quiz","s-result"].forEach(function(s){$(s).hidden=(s!=="s-quiz")}); render(); }
 $("back").addEventListener("click",function(){ if(cur>0){cur--;render();} });
 $("again").addEventListener("click",function(){picks.fill(null);cur=0;show("s-quiz");render();});
 })();
