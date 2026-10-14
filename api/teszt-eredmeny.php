@@ -126,11 +126,21 @@ $html = '<!doctype html><html lang="hu"><body style="margin:0;background:#F5EDE0
   : 'Ezt a levelet azért kaptad, mert kitöltötted a tesztet a lojangergo.com oldalon, és kérted az eredményedet. Ezen kívül nem küldök neked leveleket.') . '</td></tr>
 </table></td></tr></table></body></html>';
 
+// sima szöveges változat is (a spamszűrők jobban szeretik, ha van)
+$txt = "Szia $nev!\n\nKöszönöm, hogy kitöltötted a tesztet. Az eredményed: {$r['elem']}, vagyis {$r['name']}.\n\n"
+     . "MIT JELENT EZ?\n{$r['lead']}\n\nHONNAN ISMERHETED FEL?\n{$r['signs']}\n\nAMIT MÁR MA MEGTEHETSZ\n";
+foreach ($r['todo'] as $i => $t) $txt .= ($i + 1) . ". $t\n";
+$txt .= "\nA KÖVETKEZŐ LÉPÉS\n{$r['next']}\n{$r['cta']}: {$r['href']}\n";
+if ($s) $txt .= "\nUi.: A második legerősebb elemed: {$s['name']} ({$s['elem']}).\n";
+$txt .= "\nGergő\n";
+
 [$c2, $b2] = brevo('/smtp/email', [
     'sender' => ['email' => $cfg['sender_email'], 'name' => $cfg['sender_name']],
+    'replyTo' => ['email' => $cfg['sender_email'], 'name' => $cfg['sender_name']],
     'to' => [['email' => $email, 'name' => $nev]],
     'subject' => 'A te elemed: ' . $r['name'],
     'htmlContent' => $html,
+    'textContent' => $txt,
     'tags' => ['teszt-eredmeny'],
 ], $cfg['brevo_api_key']);
 if ($c2 >= 300) { error_log('Brevo email ' . $c2 . ' ' . $b2); fail(502, 'brevo'); }
