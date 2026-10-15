@@ -11,6 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') fail(405, 'method');
 
 $cfgPath = dirname(__DIR__, 2) . '/lojangergo-config.php';
 if (!is_file($cfgPath)) fail(500, 'config');
+if (function_exists('opcache_invalidate')) @opcache_invalidate($cfgPath, true);
 $cfg = require $cfgPath;
 foreach (['brevo_api_key', 'list_id', 'sender_email', 'sender_name'] as $k) if (empty($cfg[$k])) fail(500, 'config');
 

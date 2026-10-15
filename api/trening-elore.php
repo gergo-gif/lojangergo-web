@@ -11,6 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') fail(405, 'method');
 
 $cfgPath = dirname(__DIR__, 2) . '/lojangergo-config.php';
 if (!is_file($cfgPath)) fail(500, 'config');
+if (function_exists('opcache_invalidate')) @opcache_invalidate($cfgPath, true);
 $cfg = require $cfgPath;
 foreach (['brevo_api_key', 'sender_email', 'sender_name'] as $k) if (empty($cfg[$k])) fail(500, 'config');
 $listId = (int)($cfg['trening_list_id'] ?? 0);      // ha még nincs megadva, csak az értesítő levél megy ki
@@ -62,7 +63,7 @@ if (!is_file($flag)) {
     @touch($flag);
 }
 
-$listaOk = false;
+$listaOk = false; $listaHiba = $listId > 0 ? '' : 'nincs-lista-id';
 if ($listId > 0) {
     [$c1, $b1] = brevo('POST', '/contacts', [
         'email' => $email,
@@ -71,6 +72,7 @@ if ($listId > 0) {
         'updateEnabled' => true,
     ], $key);
     $listaOk = $c1 < 300;
+    if (!$listaOk) $listaHiba = 'brevo-' . $c1;
     if (!$listaOk) error_log('Brevo trening contact ' . $c1 . ' ' . $b1);
 }
 
@@ -116,4 +118,4 @@ $visszaHtml = '<!doctype html><html lang="hu"><body style="margin:0;background:#
 if ($c3 >= 300) error_log('Brevo trening confirm ' . $c3 . ' ' . $b3);
 
 if (!$listaOk && $c2 >= 300) fail(502, 'brevo');
-echo json_encode(['ok' => true, 'lista' => $listaOk, 'ertesito' => $c2 < 300, 'visszaigazolas' => $c3 < 300]);
+echo json_encode(['ok' => true, 'lista' => $listaOk, 'lista_hiba' => $listaHiba, 'ertesito' => $c2 < 300, 'visszaigazolas' => $c3 < 300]);
