@@ -34,8 +34,7 @@ function stripe_get($path, $key) {
 
 // a link URL-jéből megkeressük a link azonosítóját
 $linkek = stripe_get('/payment_links?limit=100', $key);
-if (!$linkek) { echo json_encode(['ok' => false, 'hiba' => 'payment_links: ' . preg_replace('/(sk|rk)_[a-z]+_\w+/', '***', $GLOBALS['utolso']),
-    'kulcs' => ['eleje' => substr($key, 0, 8), 'vege' => substr($key, -4), 'hossz' => strlen($key), 'volt_szokoz' => $nyers !== $key]]); exit; }
+if (!$linkek) { echo json_encode(['ok' => false, 'hiba' => 'payment_links: ' . preg_replace('/(sk|rk)_[a-z]+_\w+/', '***', $GLOBALS['utolso'])]); exit; }
 $idByUrl = [];
 foreach ($linkek['data'] as $l) $idByUrl[$l['url']] = $l['id'];
 
