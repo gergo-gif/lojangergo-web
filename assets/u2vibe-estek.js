@@ -2,13 +2,15 @@
 (function () {
   var egy = document.querySelector('[data-u2vibe="kovetkezo"]');
   var lista = document.querySelector('[data-u2vibe="lista"]');
-  if (!egy && !lista) return;
+  var kartya = document.querySelector('[data-u2vibe="kartya"]');
+  if (!egy && !lista && !kartya) return;
   function esc(s) { return String(s || '').replace(/[&<>"]/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
   function hely(e) { return [e.helyszin, e.cim].filter(Boolean).join(', '); }
   function meta(e) { return [e.ido, hely(e), e.ar ? e.ar + ' / fő' : ''].filter(Boolean).join(' · '); }
   fetch('/api/u2vibe-estek.php').then(function (r) { return r.json(); }).then(function (d) {
     var es = (d && d.estek) || [];
     if (!es.length) return;
+    if (kartya) kartya.textContent = 'Következő: ' + es[0].datum + ' ' + es[0].nap + (es[0].ar ? ' · ' + es[0].ar + ' / fő' : '');
     if (egy) {
       var e = es[0];
       egy.querySelector('[data-f="datum"]').innerHTML = esc(e.datum) + '<br><span style="font-size: 18px; font-weight: 600">' + esc(e.nap) + '</span>';
