@@ -168,22 +168,10 @@ Levegő · Ismerkedős estek</p>
 <h2 style="margin: 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(44px, 5vw, 72px); line-height: 0.95; text-transform: uppercase">Következő estek</h2>
 <p style="margin: 0; color: #5A4C42">Havonta több alkalom · változó budapesti helyszínek · 5 990 Ft-tól</p>
 </div>
-<div style="border-top: 2px solid #2A211C">
-<div class="row reveal" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 32px; padding: 24px 0; border-bottom: 1px solid #C9B9A0">
-<div style="flex: 0 0 140px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; font-size: 28px; line-height: 1; text-transform: uppercase">[Dátum]</div>
-<div style="flex: 999 1 320px; min-width: 0">
-<p style="margin: 0; font-size: 20px; font-weight: 600">[Az est címe]</p>
-<p style="margin: 0; font-size: 15px; color: #5A4C42">[Helyszín] · [Ár] · korcsoportos ültetés</p>
-</div>
-<a href="https://u2vibe.com" class="btn" style="flex: 0 0 auto; background: #2A211C; color: #F5EDE0; text-decoration: none; font-weight: 600; padding: 12px 20px" target="_blank" rel="noopener">Jegyek →</a>
-</div>
-<div class="row reveal" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 32px; padding: 24px 0; border-bottom: 1px solid #C9B9A0">
-<div style="flex: 0 0 140px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; font-size: 28px; line-height: 1; text-transform: uppercase">[Dátum]</div>
-<div style="flex: 999 1 320px; min-width: 0">
-<p style="margin: 0; font-size: 20px; font-weight: 600">[Az est címe]</p>
-<p style="margin: 0; font-size: 15px; color: #5A4C42">[Helyszín] · [Ár] · korcsoportos ültetés</p>
-</div>
-<a href="https://u2vibe.com" class="btn" style="flex: 0 0 auto; background: #2A211C; color: #F5EDE0; text-decoration: none; font-weight: 600; padding: 12px 20px" target="_blank" rel="noopener">Jegyek →</a>
+<div style="border-top: 2px solid #2A211C" data-u2vibe="lista">
+<div class="row" data-f="sor" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 32px; padding: 24px 0; border-bottom: 1px solid #C9B9A0">
+<div style="flex: 999 1 320px; min-width: 0"><p style="margin: 0; font-size: 20px; font-weight: 600">Az aktuális időpontokat a u2vibe.com-on találod.</p></div>
+<a href="https://u2vibe.com/esemenyek/" class="btn" style="flex: 0 0 auto; background: #2A211C; color: #F5EDE0; text-decoration: none; font-weight: 600; padding: 12px 20px" target="_blank" rel="noopener">Összes est →</a>
 </div>
 </div>
 <p class="reveal" style="margin: 24px 0 0; color: #5A4C42">A jegyvásárlás és az aktuális korcsoportok a u2vibe.com-on érhetők el.</p>
@@ -214,5 +202,6 @@ document.querySelectorAll('header').forEach(function(h){
   b.addEventListener('click',function(){var o=h.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});
 });
 </script>
+<script src="/assets/u2vibe-estek.js" defer></script>
 </body>
 </html>
