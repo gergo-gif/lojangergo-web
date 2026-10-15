@@ -90,5 +90,30 @@ $e = fn($t) => htmlspecialchars($t, ENT_QUOTES, 'UTF-8');
 ], $key);
 if ($c2 >= 300) error_log('Brevo trening notify ' . $c2 . ' ' . $b2);
 
+// visszaigazolás a jelentkezőnek
+$visszaHtml = '<!doctype html><html lang="hu"><body style="margin:0;background:#F5EDE0;font-family:Arial,Helvetica,sans-serif;color:#2A211C">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F5EDE0"><tr><td align="center" style="padding:24px 12px">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;background:#FFFFFF">
+<tr><td style="background:#D9A32E;color:#2A211C;padding:32px"><h1 style="margin:0;font-size:36px;line-height:1;text-transform:uppercase">Megkaptam!</h1></td></tr>
+<tr><td style="padding:32px;font-size:16px;line-height:1.6">
+<p style="margin:0 0 16px">Szia ' . $e($nev) . '!</p>
+<p style="margin:0 0 16px">Rögzítettem az előregisztrációdat: <strong>' . $e($muhely) . '</strong>, ' . $e(mb_strtolower($forma)) . '.</p>
+<p style="margin:0 0 16px">Amint összegyűlik a csoport, e-mailben küldöm az időpontokat és a fizetési linket. Az előregisztráció nem kötelez semmire.</p>
+<p style="margin:0 0 16px">Ha kérdésed van, csak válaszolj erre a levélre.</p>
+<p style="margin:24px 0 0">Gergő</p>
+</td></tr>
+<tr><td style="padding:20px 32px;font-size:12px;color:#5A4C42;background:#EADFCB">Ezt a levelet azért kaptad, mert előregisztráltál egy műhelyre a lojangergo.com oldalon.</td></tr>
+</table></td></tr></table></body></html>';
+[$c3, $b3] = brevo('POST', '/smtp/email', [
+    'sender' => ['email' => $cfg['sender_email'], 'name' => $cfg['sender_name']],
+    'replyTo' => ['email' => $cfg['sender_email'], 'name' => $cfg['sender_name']],
+    'to' => [['email' => $email, 'name' => $nev]],
+    'subject' => 'Megkaptam az előregisztrációdat – ' . $muhely,
+    'htmlContent' => $visszaHtml,
+    'textContent' => "Szia $nev!\n\nRögzítettem az előregisztrációdat: $muhely, " . mb_strtolower($forma) . ".\n\nAmint összegyűlik a csoport, e-mailben küldöm az időpontokat és a fizetési linket. Az előregisztráció nem kötelez semmire.\n\nHa kérdésed van, csak válaszolj erre a levélre.\n\nGergő\n",
+    'tags' => ['trening-visszaigazolas'],
+], $key);
+if ($c3 >= 300) error_log('Brevo trening confirm ' . $c3 . ' ' . $b3);
+
 if (!$listaOk && $c2 >= 300) fail(502, 'brevo');
-echo json_encode(['ok' => true]);
+echo json_encode(['ok' => true, 'lista' => $listaOk, 'ertesito' => $c2 < 300, 'visszaigazolas' => $c3 < 300]);
