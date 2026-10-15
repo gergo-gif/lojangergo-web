@@ -103,13 +103,13 @@ Föld · Tematikus családállítás</p>
 <span><strong>Helyszín:</strong> 1114 Budapest, Bartók Béla út</span>
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px">
-<a href="#" class="btn" style="background: #F5EDE0; color: #2A211C; text-decoration: none; padding: 18px 20px; display: flex; flex-direction: column; gap: 2px">
+<a href="#" data-link="allito" class="btn" style="background: #F5EDE0; color: #2A211C; text-decoration: none; padding: 18px 20px; display: flex; flex-direction: column; gap: 2px">
 <span style="font-weight: 700; font-size: 18px">Jelentkezem állítóként →</span>
-<span style="font-size: 15px">25 000 Ft · 5 állító hely</span>
+<span style="font-size: 15px" data-hely="allito">25 000 Ft · 5 állító hely</span>
 </a>
-<a href="#" class="btn" style="border: 2px solid #F5EDE0; color: #FFFFFF; text-decoration: none; padding: 16px 18px; display: flex; flex-direction: column; gap: 2px">
+<a href="#" data-link="segito" class="btn" style="border: 2px solid #F5EDE0; color: #FFFFFF; text-decoration: none; padding: 16px 18px; display: flex; flex-direction: column; gap: 2px">
 <span style="font-weight: 700; font-size: 18px">Jelentkezem segítőként →</span>
-<span style="font-size: 15px">12 500 Ft · 10 segítő hely</span>
+<span style="font-size: 15px" data-hely="segito">12 500 Ft · 10 segítő hely</span>
 </a>
 </div>
 </div>
@@ -243,6 +243,22 @@ document.querySelectorAll('header').forEach(function(h){
   var b=h.querySelector('.navtoggle'); if(!b) return;
   b.addEventListener('click',function(){var o=h.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});
 });
+</script>
+<script>
+(function(){
+  var LINK={allito:'', segito:''}; // a Stripe fizetési linkek
+  var AR={allito:'25 000 Ft', segito:'12 500 Ft'}, NEV={allito:'állító', segito:'segítő'};
+  ['allito','segito'].forEach(function(k){ var a=document.querySelector('[data-link="'+k+'"]'); if(a&&LINK[k]){a.href=LINK[k];a.target='_blank';a.rel='noopener';} });
+  fetch('/api/csaladallitas-helyek.php').then(function(r){return r.json();}).then(function(d){
+    if(!d||!d.ok) return;
+    ['allito','segito'].forEach(function(k){
+      var h=d[k], el=document.querySelector('[data-hely="'+k+'"]'), a=document.querySelector('[data-link="'+k+'"]');
+      if(!h||!el) return;
+      if(h.szabad>0){ el.textContent=AR[k]+' · még '+h.szabad+' / '+h.max+' '+NEV[k]+' hely'; }
+      else { el.textContent='Betelt'; if(a){a.removeAttribute('href');a.style.opacity='0.5';a.style.pointerEvents='none';} }
+    });
+  }).catch(function(){});
+})();
 </script>
 </body>
 </html>
