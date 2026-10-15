@@ -6,8 +6,8 @@ header('X-Robots-Tag: noindex');
 
 // Fizetési linkek: ezt kell átírni, ha új alkalom jön.
 const ALKALOM = [
-    'allito' => ['url' => '', 'max' => 5],
-    'segito' => ['url' => '', 'max' => 10],
+    'allito' => ['url' => 'https://buy.stripe.com/5kQdR8gKUez5c0y4rS2go04', 'max' => 5],
+    'segito' => ['url' => 'https://buy.stripe.com/4gM3cu0LW8aH9Sq1fG2go05', 'max' => 10],
 ];
 const TTL = 300;
 

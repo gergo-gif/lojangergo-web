@@ -103,11 +103,11 @@ Föld · Tematikus családállítás</p>
 <span><strong>Helyszín:</strong> 1114 Budapest, Bartók Béla út</span>
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px">
-<a href="#" data-link="allito" class="btn" style="background: #F5EDE0; color: #2A211C; text-decoration: none; padding: 18px 20px; display: flex; flex-direction: column; gap: 2px">
+<a href="https://buy.stripe.com/5kQdR8gKUez5c0y4rS2go04" target="_blank" rel="noopener" data-link="allito" class="btn" style="background: #F5EDE0; color: #2A211C; text-decoration: none; padding: 18px 20px; display: flex; flex-direction: column; gap: 2px">
 <span style="font-weight: 700; font-size: 18px">Jelentkezem állítóként →</span>
 <span style="font-size: 15px" data-hely="allito">25 000 Ft · 5 állító hely</span>
 </a>
-<a href="#" data-link="segito" class="btn" style="border: 2px solid #F5EDE0; color: #FFFFFF; text-decoration: none; padding: 16px 18px; display: flex; flex-direction: column; gap: 2px">
+<a href="https://buy.stripe.com/4gM3cu0LW8aH9Sq1fG2go05" target="_blank" rel="noopener" data-link="segito" class="btn" style="border: 2px solid #F5EDE0; color: #FFFFFF; text-decoration: none; padding: 16px 18px; display: flex; flex-direction: column; gap: 2px">
 <span style="font-weight: 700; font-size: 18px">Jelentkezem segítőként →</span>
 <span style="font-size: 15px" data-hely="segito">12 500 Ft · 10 segítő hely</span>
 </a>
@@ -246,7 +246,7 @@ document.querySelectorAll('header').forEach(function(h){
 </script>
 <script>
 (function(){
-  var LINK={allito:'', segito:''}; // a Stripe fizetési linkek
+  var LINK={allito:'https://buy.stripe.com/5kQdR8gKUez5c0y4rS2go04', segito:'https://buy.stripe.com/4gM3cu0LW8aH9Sq1fG2go05'}; // a Stripe fizetési linkek
   var AR={allito:'25 000 Ft', segito:'12 500 Ft'}, NEV={allito:'állító', segito:'segítő'};
   ['allito','segito'].forEach(function(k){ var a=document.querySelector('[data-link="'+k+'"]'); if(a&&LINK[k]){a.href=LINK[k];a.target='_blank';a.rel='noopener';} });
   fetch('/api/csaladallitas-helyek.php').then(function(r){return r.json();}).then(function(d){
