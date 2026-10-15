@@ -114,6 +114,40 @@ Föld · Tematikus családállítás</p>
 </div>
 </div>
 </div>
+<div id="ertesito" class="reveal" style="margin-top: 20px; border: 2px solid #4F5A2A; padding: clamp(24px, 3.5vw, 40px); display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: flex-start">
+<div style="flex: 1 1 280px; min-width: 0">
+<p style="margin: 0 0 8px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(28px, 3vw, 40px); line-height: 0.95; text-transform: uppercase">Nem jó most? Szólok a következőről.</p>
+<p style="margin: 0; color: #5A4C42">Havonta tartok tematikus családállítást, mindig más témával. Iratkozz fel, és e-mailben jelzem, amikor meghirdetem a következő alkalmat. Ingyenes, bármikor leiratkozhatsz.</p>
+</div>
+<form id="ertesito-form" novalidate style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px">
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase">Keresztnév<input type="text" name="nev" required autocomplete="given-name" placeholder="pl. Anna" style="font-family: 'Work Sans', sans-serif; font-size: 17px; padding: 14px 16px; border: 2px solid #4F5A2A; background: #FFFFFF; color: #2A211C; width: 100%; box-sizing: border-box; text-transform: none; letter-spacing: 0"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase">E-mail-cím<input type="email" name="email" required autocomplete="email" placeholder="anna@pelda.hu" style="font-family: 'Work Sans', sans-serif; font-size: 17px; padding: 14px 16px; border: 2px solid #4F5A2A; background: #FFFFFF; color: #2A211C; width: 100%; box-sizing: border-box; text-transform: none; letter-spacing: 0"></label>
+</div>
+<input type="text" name="weboldal" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+<label style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px"><input type="checkbox" name="hozzajarulas" required style="width: 20px; height: 20px; margin: 0; flex: 0 0 auto; accent-color: #4F5A2A"><span>Hozzájárulok, hogy e-mailben értesíts a következő családállításokról. Az <a href="/adatkezeles/">adatkezelési tájékoztatót</a> elolvastam.</span></label>
+<p id="ertesito-hiba" role="alert" hidden style="margin: 0; padding: 10px 14px; background: #B24A26; color: #FFFFFF; font-size: 15px"></p>
+<button type="submit" class="btn" style="align-self: flex-start; font-family: 'Work Sans', sans-serif; font-size: 18px; font-weight: 700; padding: 16px 28px; border: 0; background: #4F5A2A; color: #FFFFFF; cursor: pointer">Kérem az értesítést →</button>
+</form>
+<div id="ertesito-ok" hidden style="flex: 1 1 360px">
+<p style="margin: 0 0 6px; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 36px; text-transform: uppercase; color: #4F5A2A">Köszönöm!</p>
+<p style="margin: 0">Feliratkoztál. Küldtem egy visszaigazoló levelet is, és szólok, amint meghirdetem a következő alkalmat.</p>
+</div>
+</div>
+<script>
+(function(){
+  var f=document.getElementById('ertesito-form'), err=document.getElementById('ertesito-hiba'), btn=f.querySelector('button[type=submit]');
+  f.addEventListener('submit',function(e){
+    e.preventDefault(); err.hidden=true;
+    if(!f.reportValidity()) return;
+    btn.disabled=true; var t=btn.textContent; btn.textContent='Küldés…';
+    fetch('/api/csaladallitas-ertesito.php',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({nev:f.nev.value,email:f.email.value,weboldal:f.weboldal.value,hozzajarulas:f.hozzajarulas.checked})})
+    .then(function(r){return r.json().then(function(j){return {s:r.status,j:j};});})
+    .then(function(x){ if(x.j&&x.j.ok){f.hidden=true;document.getElementById('ertesito-ok').hidden=false;return;} throw x; })
+    .catch(function(x){ err.textContent=(x&&x.s===429)?'Túl sok próbálkozás. Próbáld újra egy óra múlva.':'Valami hiba történt. Próbáld újra, vagy írj a hello@lojangergo.com címre.'; err.hidden=false; btn.disabled=false; btn.textContent=t; });
+  });
+})();
+</script>
 </section>
 
 <section style="max-width: 1240px; margin: 0 auto; padding: 24px 24px 96px">
