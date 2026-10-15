@@ -15,8 +15,10 @@ $cacheFile = sys_get_temp_dir() . '/lg-csaladallitas-helyek.json';
 if (is_file($cacheFile) && time() - filemtime($cacheFile) < TTL) { readfile($cacheFile); exit; }
 
 $cfgPath = dirname(__DIR__, 2) . '/lojangergo-config.php';
+if (is_file($cfgPath) && function_exists('opcache_invalidate')) @opcache_invalidate($cfgPath, true);
 $cfg = is_file($cfgPath) ? require $cfgPath : [];
-$key = $cfg['stripe_key'] ?? '';
+$nyers = (string)($cfg['stripe_key'] ?? '');
+$key = trim($nyers);
 if ($key === '') { echo json_encode(['ok' => false, 'hiba' => is_file($cfgPath) ? 'nincs-stripe_key' : 'nincs-config']); exit; }
 $GLOBALS['utolso'] = '';
 
@@ -32,7 +34,8 @@ function stripe_get($path, $key) {
 
 // a link URL-jéből megkeressük a link azonosítóját
 $linkek = stripe_get('/payment_links?limit=100', $key);
-if (!$linkek) { echo json_encode(['ok' => false, 'hiba' => 'payment_links: ' . preg_replace('/(sk|rk)_[a-z]+_\w+/', '***', $GLOBALS['utolso'])]); exit; }
+if (!$linkek) { echo json_encode(['ok' => false, 'hiba' => 'payment_links: ' . preg_replace('/(sk|rk)_[a-z]+_\w+/', '***', $GLOBALS['utolso']),
+    'kulcs' => ['eleje' => substr($key, 0, 8), 'vege' => substr($key, -4), 'hossz' => strlen($key), 'volt_szokoz' => $nyers !== $key]]); exit; }
 $idByUrl = [];
 foreach ($linkek['data'] as $l) $idByUrl[$l['url']] = $l['id'];
 
