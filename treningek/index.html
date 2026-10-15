@@ -202,6 +202,8 @@ Tűz · Csoportos tréningek</p>
 <input type="checkbox" name="hozzajarulas" required style="width: 22px; height: 22px; margin: 0; flex: 0 0 auto">
 <span>Hozzájárulok, hogy a műhely indulásáról e-mailt kapjak. Az <a href="/adatkezeles/" style="color: #F5EDE0">adatkezelési tájékoztatót</a> elolvastam.</span>
 </label>
+<input type="text" name="weboldal" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+<p id="elore-hiba" role="alert" hidden style="margin:0;padding:12px 16px;background:#B24A26;color:#FFFFFF;font-size:16px"></p>
 <button type="submit" class="btn" style="align-self: flex-start; font-family: 'Work Sans', sans-serif; font-size: 20px; font-weight: 700; padding: 20px 40px; border: 0; background: #D9A32E; color: #2A211C; cursor: pointer">Előregisztrálok →</button>
 </form>
 
@@ -273,11 +275,25 @@ document.querySelectorAll('header').forEach(function(h){
     });
   });
   var f=document.getElementById('elore-form');
+  var err=document.getElementById('elore-hiba');
+  var btn=f.querySelector('button[type=submit]');
+  function sel(g){var b=document.querySelector('[data-group="'+g+'"][aria-pressed="true"]');return b?b.textContent.trim():'';}
   f.addEventListener('submit',function(e){
     e.preventDefault();
+    err.hidden=true;
     if(!f.reportValidity()) return;
-    // TODO: Brevo-bekötés (4. lépés). Addig csak a köszönőüzenet jelenik meg.
-    f.hidden=true; document.getElementById('elore-ok').hidden=false;
+    btn.disabled=true; var t=btn.textContent; btn.textContent='Küldés…';
+    fetch('/api/trening-elore.php',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({
+      nev:f.nev.value, email:f.email.value, weboldal:f.weboldal.value, hozzajarulas:f.hozzajarulas.checked,
+      muhely:sel('workshop'), forma:sel('format')})})
+    .then(function(r){return r.json().then(function(j){return {s:r.status,j:j};});})
+    .then(function(x){
+      if(x.j&&x.j.ok){f.hidden=true;document.getElementById('elore-ok').hidden=false;return;}
+      throw x;
+    }).catch(function(x){
+      err.textContent=(x&&x.s===429)?'Túl sok próbálkozás. Próbáld újra egy óra múlva.':'Valami hiba történt. Próbáld újra, vagy írj a hello@lojangergo.com címre.';
+      err.hidden=false; btn.disabled=false; btn.textContent=t;
+    });
   });
 })();
 </script>

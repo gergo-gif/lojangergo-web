@@ -13,6 +13,8 @@ return [
     'list_id'       => 0,            // a Brevo-lista azonosítója (szám)
     'sender_email'  => 'hello@lojangergo.com',
     'sender_name'   => 'Loján Gergő',
+    'trening_list_id' => 0,          // a tréning-előregisztrációs Brevo-lista azonosítója
+    'notify_email'  => 'hello@lojangergo.com', // ide jön az értesítő minden előregisztrációról
 ];
 ```
 
@@ -23,3 +25,7 @@ return [
 - `private/teszt-eredmenyek.php`: a négy eredmény szövege (Szél, Parázs, Mélyvíz, Fa)
 
 A Brevo-mezőket (`ELEM`, `MASODIK_ELEM`, `TESZT_DATUM`) az első beküldés automatikusan létrehozza. Hírlevél-listára csak az kerül, aki az első pipát bejelöli.
+
+## Tréning-előregisztráció
+
+- `api/trening-elore.php`: a `trening_list_id` listára teszi a jelentkezőt (mezők: `MUHELY`, `FORMA`, `ELOREG_DATUM`, automatikusan jönnek létre), és értesítőt küld a `notify_email` címre. Ha a lista még nincs beállítva, csak az értesítő megy ki, így senki nem vész el.
