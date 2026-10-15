@@ -17,7 +17,8 @@ if (is_file($cacheFile) && time() - filemtime($cacheFile) < TTL) { readfile($cac
 $cfgPath = dirname(__DIR__, 2) . '/lojangergo-config.php';
 $cfg = is_file($cfgPath) ? require $cfgPath : [];
 $key = $cfg['stripe_key'] ?? '';
-if ($key === '') { echo json_encode(['ok' => false]); exit; }
+if ($key === '') { echo json_encode(['ok' => false, 'hiba' => is_file($cfgPath) ? 'nincs-stripe_key' : 'nincs-config']); exit; }
+$GLOBALS['utolso'] = '';
 
 function stripe_get($path, $key) {
     $ch = curl_init('https://api.stripe.com/v1' . $path);
@@ -25,12 +26,13 @@ function stripe_get($path, $key) {
     $body = curl_exec($ch);
     $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     curl_close($ch);
+    if ($code !== 200) { $e = json_decode((string)$body, true); $GLOBALS['utolso'] = $code . ' ' . ($e['error']['message'] ?? ''); }
     return $code === 200 ? json_decode($body, true) : null;
 }
 
 // a link URL-jéből megkeressük a link azonosítóját
 $linkek = stripe_get('/payment_links?limit=100', $key);
-if (!$linkek) { echo json_encode(['ok' => false]); exit; }
+if (!$linkek) { echo json_encode(['ok' => false, 'hiba' => 'payment_links: ' . preg_replace('/(sk|rk)_[a-z]+_\w+/', '***', $GLOBALS['utolso'])]); exit; }
 $idByUrl = [];
 foreach ($linkek['data'] as $l) $idByUrl[$l['url']] = $l['id'];
 
@@ -41,7 +43,7 @@ foreach (ALKALOM as $nev => $a) {
     $db = 0; $after = '';
     do {
         $r = stripe_get('/checkout/sessions?limit=100&status=complete&payment_link=' . urlencode($id) . $after, $key);
-        if (!$r) { echo json_encode(['ok' => false]); exit; }
+        if (!$r) { echo json_encode(['ok' => false, 'hiba' => 'checkout_sessions: ' . preg_replace('/(sk|rk)_[a-z]+_\w+/', '***', $GLOBALS['utolso'])]); exit; }
         foreach ($r['data'] as $s) if (($s['payment_status'] ?? '') === 'paid') $db++;
         $after = $r['has_more'] ? '&starting_after=' . end($r['data'])['id'] : '';
     } while ($after);
