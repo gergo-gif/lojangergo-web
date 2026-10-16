@@ -56,7 +56,7 @@ if (!is_file($flag)) {
     @touch($flag);
 }
 
-$listaOk = false; $listaHiba = $listId > 0 ? '' : 'nincs-lista-id; kulcsok: ' . implode(',', array_keys($cfg)) . '; ertek-tipus: ' . gettype($cfg['csaladallitas_list_id'] ?? null);
+$listaOk = false; $listaHiba = $listId > 0 ? '' : 'nincs-lista-id';
 if ($listId > 0) {
     [$c1, $b1] = brevo('POST', '/contacts', [
         'email' => $email,
